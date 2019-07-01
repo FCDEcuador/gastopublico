@@ -19,30 +19,6 @@ Route::group(['prefix' => '/v1'], function(){
 	/* /api/v1/login  */
 	Route::post('login', 'Api\LoginController@jwtLogin')->name('api.v1.login');
 
-	/********************************************************
-		
-		RUTAS PARA CONSUMO DE CATALOGOS DEL SISTEMA
-
-	*********************************************************/
-	route::group(['prefix' => '/catalogues'], function(){
-		
-		
-		// Ruta que devuelve todos los catalogos del sistema
-		/* /api/v1/catalogues/list  */
-		Route::get('/list', 'Api\CataloguesController@index')->name('api.v1.catalogues.list');
-
-		// Ruta que devuelve las provincias por region
-		/* /api/v1/catalogues/states/list  */
-		Route::get('/states/list', 'Api\CataloguesController@states')->name('api.v1.catalogues.states.list');
-
-		// Ruta que devuelve las ciudades por provincia
-		/* /api/v1/catalogues/cities/list  */
-		Route::get('/cities/list/{sStateId?}', 'Api\CataloguesController@cities')->name('api.v1.catalogues.cities.list');
-
-		// Ruta que devuelve el detalle de un catálogo
-		/* /api/v1/catalogues/detail  */
-		Route::get('/detail/{sCatalogueId?}', 'Api\CataloguesController@detail')->name('api.v1.catalogues.detail');
-
-	});
+	
 
 });

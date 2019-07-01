@@ -5,7 +5,7 @@ namespace BlaudCMS\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use BlaudCMS\Http\Controllers\Controller;
 
-use BlaudCMS\Message;
+
 use BlaudCMS\Configuration;
 use BlaudCMS\Menu;
 use BlaudCMS\MenuItem;
@@ -22,6 +22,7 @@ use SEO;
 
 use Storage;
 use Auth;
+
 
 /**
 * Clase para mostrar el home del sitio web
@@ -60,6 +61,7 @@ class HomeController extends Controller
     public function __construct(){
     	
     	// Instanciamos el objeto de configuracion para obtener su data, si no existe creamos un nuevo objeto
+        
         $oConfiguration = Configuration::find(1);
         if( ! is_object($oConfiguration)){
             $oConfiguration = new Configuration;
@@ -70,6 +72,7 @@ class HomeController extends Controller
 
         $this->sStorageDisk = 'public';
         $this->oStorage = Storage::disk($this->sStorageDisk);
+        
     }
 
 
@@ -84,8 +87,9 @@ class HomeController extends Controller
      */
     public function home(Request $request){
 
+        
         $aMetas = MetaTag::all();
-        $title = $this->oConfiguration->title_website ? $this->oConfiguration->title_website : 'Inicio';
+        $title = $this->oConfiguration->title_website ? $this->oConfiguration->title_website : 'Gasto Publico';
         SEO::setTitle($title);
 
         if($aMetas->isNotEmpty()){
@@ -107,7 +111,7 @@ class HomeController extends Controller
 
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
-        $oContentCategory = ContentCategory::has('contentArticles')->inRandomOrder()->first();
+        $aContentCategories = ContentCategory::has('contentArticles')->inRandomOrder()->get();
 
         $data = [
     		// Datos de configuracion general del sitio
@@ -117,6 +121,11 @@ class HomeController extends Controller
 
             // menus de navegacion
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
+            'aContentCategories' => $aContentCategories,
+            'mainArticles' => ContentArticle::orderBy('created_at', 'desc')->skip(0)->take(3)->get(),
+            'secondaryArticles' => ContentArticle::orderBy('created_at', 'desc')->skip(3)->take(4)->get(),
+            'listArticles' => ContentArticle::orderBy('created_at', 'desc')->skip(7)->take(3)->get(),
+            'aIndicators' => Indicator::where('unity', 'USD')->orderBy('created_at', 'desc')->skip(0)->take(4)->get(),
 
             // Datos para el contenido de la pagina
             
@@ -135,5 +144,7 @@ class HomeController extends Controller
         }
         
         return $view;
+        
+        
     }
 }

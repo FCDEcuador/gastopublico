@@ -5,7 +5,6 @@ namespace BlaudCMS\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use BlaudCMS\Http\Controllers\Controller;
 
-use BlaudCMS\Message;
 use BlaudCMS\Configuration;
 use BlaudCMS\Menu;
 use BlaudCMS\MenuItem;
@@ -145,8 +144,7 @@ class ContentCategoriesController extends Controller
 
             // Datos para el contenido de la pagina
             'oContentCategory' => $oContentCategory,
-            'outstandingContentArticlesList' => $oContentCategory->contentArticles()->outstandings()->take(3)->orderBy('created_at', 'desc')->get(),
-            'contentArticlesList' => $oContentCategory->contentArticles()->noOutstandings()->orderBy('created_at', 'desc')->paginate(3),
+            'contentArticlesList' => $oContentCategory->contentArticles()->orderBy('created_at', 'desc')->paginate(3),
     	];
 
     	$view = view('frontend.content-category', $data);

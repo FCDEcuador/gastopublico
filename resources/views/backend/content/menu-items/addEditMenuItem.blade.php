@@ -184,10 +184,7 @@
                                   <optgroup label="Links Internos">
                                     <option value="/">Inicio</option>
                                     <option value="sobre-el-observatorio">Sobre el Observatorio</option>
-                                    <option value="casos-de-corrupcion">Casos de Corrupción</option>
-                                    <option value="historias-de-exito">Historias de Éxito</option>
-                                    <option value="biblioteca-legal">Biblioteca Legal</option>
-                                    <option value="estadisticas">Estadisticas</option>
+                                    <option value="indicadores">Indicadores</option>
                                     <option value="contactenos">Contacto</option>
                                   </optgroup>
                                   
@@ -199,30 +196,6 @@
                                       <optgroup label="Páginas de Contenido">
                                         @foreach($contentArticlesList as $page)
                                           <option value="{!! $page->contentCategory->slug !!}/{!! $page->slug !!}">{!! $page->contentCategory->name !!} / {!! $page->title !!}</option>
-                                        @endforeach
-                                      </optgroup>
-                                  @endif
-
-                                  @if($successStoriesList->isNotEmpty())
-                                      <optgroup label="Historias de Exito">
-                                        @foreach($successStoriesList as $successStory)
-                                          <option value="{!! $successStory->url !!}">{!! $successStory->name !!}</option>
-                                        @endforeach
-                                      </optgroup>
-                                  @endif
-
-                                  @if($corruptionCasesList->isNotEmpty())
-                                      <optgroup label="Casos de Corrupción">
-                                        @foreach($corruptionCasesList as $oCorruptionCase)
-                                          <option value="casos-de-corrupcion/{!! $oCorruptionCase->slug !!}">{!! $oCorruptionCase->name !!}</option>
-                                        @endforeach
-                                      </optgroup>
-                                  @endif
-
-                                  @if($legalLibraryList->isNotEmpty())
-                                      <optgroup label="Biblioteca Legal">
-                                        @foreach($legalLibraryList as $oLegalLibrary)
-                                          <option value="biblioteca-legal/{!! $oLegalLibrary->slug !!}">{!! $oLegalLibrary->title !!}</option>
                                         @endforeach
                                       </optgroup>
                                   @endif
