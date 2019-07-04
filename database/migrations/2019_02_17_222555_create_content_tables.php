@@ -45,6 +45,7 @@ class CreateContentTables extends Migration
                 $table->string('title');
                 $table->string('subtitle')->nullable();
                 $table->text('tags')->nullable();
+                $table->text('list_type')->default('listado1');
                 $table->text('meta_description')->nullable();
                 $table->text('meta_keywords')->nullable();
                 $table->text('extra_headers')->nullable();

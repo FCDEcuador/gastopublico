@@ -35,11 +35,14 @@ a{
 }
 .subtitulo{
     color: #487d27;
+<<<<<<< HEAD
     font-size: 1.2rem;
 }
 
 #noticias .carousel-indicators{
 	position: relative;
+=======
+>>>>>>> 315b761e2cb278508db1827b8b72189fd561eea1
 }
 
 #casos-corrupcion .carousel-indicators{
@@ -141,6 +144,7 @@ a{
 }
 .fz14{
 	font-size: 14px !important;
+<<<<<<< HEAD
 	line-height: 16px !important;
 }
 .fz16{
@@ -148,6 +152,10 @@ a{
 	line-height: 18px !important;
 }
 
+=======
+	line-height: 14px !important;
+}
+>>>>>>> 315b761e2cb278508db1827b8b72189fd561eea1
 .minh80{
 	min-height: 80px;
 }
@@ -229,10 +237,13 @@ a{
 	}
 }
 
+<<<<<<< HEAD
 .card-body{
 	    padding: 1rem;
 }
 
+=======
+>>>>>>> 315b761e2cb278508db1827b8b72189fd561eea1
 .nuevoB{
 background-color: #487D27;
     color: #FFF;
@@ -272,13 +283,21 @@ background-color: #FF8D1D;
 }
 
 .share-md .at-resp-share-element .at-share-btn{
+<<<<<<< HEAD
 	background: #487d27!important;
+=======
+	background: #6c757d!important;
+>>>>>>> 315b761e2cb278508db1827b8b72189fd561eea1
 }
 
 
 .at-resp-share-element .at-share-btn{
 	margin-right: 10px!important; 
+<<<<<<< HEAD
 	background: #487d27!important;
+=======
+	background: #24395b!important;
+>>>>>>> 315b761e2cb278508db1827b8b72189fd561eea1
 }
 
 #modalDenuncias .modal-content{
@@ -286,6 +305,7 @@ background-color: #FF8D1D;
 }
 
 /**** COLORES ****/
+<<<<<<< HEAD
 .btn-success{background:#487d27;border-color:#487d27;text-transform: uppercase; }
 .btn-info{background:#487d27;border-color:#487d27;text-transform: uppercase; }
 .border-info{border-color: #487d27!important;}
@@ -303,17 +323,44 @@ background-color: #FF8D1D;
 .verde{color:#487d27!important;}
 
 .bgverde{background:#487d27!important;}
+=======
+.btn-success{background:#a9d42c;border-color:#a9d42c;text-transform: uppercase; }
+.btn-info{background:#487d27;border-color:#487d27;text-transform: uppercase; }
+.border-info{border-color: #487d27!important;}
+.border-success{border-color: #a9d42c!important;}
+
+.text-success{color:#a9d42c!important;}
+.text-info{color:#487d27!important;}
+.text-default{color:#24395b!important;}
+
+.verde{color:#a9d42c!important;}
+.morado{color:#390094!important;}
+.celeste{color:#487d27!important;}
+.azul{color:#2f3c5a!important;}
+.verde{color:#a9d42c!important;}
+.verde{color:#a9d42c!important;}
+
+.bgverde{background:#a9d42c!important;}
+>>>>>>> 315b761e2cb278508db1827b8b72189fd561eea1
 .bgmorado{background:#390094!important;border-color:#390094!important; }
 .bgceleste{background:#487d27!important;}
 .bgazul{background:#2f3c5a!important;}
 .bgvioleta{background:#390094;opacity: 0.5!important;}
 .bg-secondary{background:#808080!important;}
 
+<<<<<<< HEAD
 .borverde{border-color: #487d27!important;}
 .bormorado{border-color: #390094!important;}
 .borceleste{border-color: #487d27!important;}
 .borazul{border-color: #2f3c5a!important;}
 .borverde{border-color: #487d27!important;}
+=======
+.borverde{border-color: #a9d42c!important;}
+.bormorado{border-color: #390094!important;}
+.borceleste{border-color: #487d27!important;}
+.borazul{border-color: #2f3c5a!important;}
+.borverde{border-color: #a9d42c!important;}
+>>>>>>> 315b761e2cb278508db1827b8b72189fd561eea1
 
 .tags-Busqueda{color: #487d27;}
 
@@ -499,7 +546,11 @@ background-color: #331196; }
 	line-height: 36px;
 }
 .chart li.past .number {
+<<<<<<< HEAD
     color: #444;
+=======
+    color: #24395b;
+>>>>>>> 315b761e2cb278508db1827b8b72189fd561eea1
 }
 
 .redes-ico{

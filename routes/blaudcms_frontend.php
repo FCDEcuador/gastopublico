@@ -18,13 +18,11 @@ Route::get('/', function(){
 Route::get('/web', 'Frontend\HomeController@home')->name('home');
 
 
-Route::get('/sobre-el-observatorio', 'Frontend\StaticPagesController@about')->name('about-us');
+Route::get('/sobre-nosotros', 'Frontend\StaticPagesController@about')->name('about-us');
 Route::get('/contactenos', 'Frontend\StaticPagesController@contact')->name('contact-us');
 Route::post('/contactenos','Frontend\StaticPagesController@contactSend')->name('contact-us.send');
 
-
 Route::get('/indicadores', 'Frontend\IndicatorsController@index')->name('indicators');
-
 
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}', 'Frontend\ContentCategoriesController@index')->name('content-category');
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}/{contentArticleSlug?}', 'Frontend\ContentCategoriesController@show')->name('content-article');
