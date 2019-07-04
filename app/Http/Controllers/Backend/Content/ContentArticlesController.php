@@ -206,6 +206,7 @@ class ContentArticlesController extends Controller
         $oContentArticle->meta_description = $request->meta_description;
         $oContentArticle->meta_keywords = $request->meta_keywords;
         $oContentArticle->extra_headers = $request->extra_headers;
+        $oContentArticle->list_type = $request->list_type;
         $oContentArticle->content_category_id = $request->content_category_id;
 
         if($request->hasFile('main_multimedia')){
@@ -346,6 +347,7 @@ class ContentArticlesController extends Controller
         $oContentArticle->meta_keywords = $request->meta_keywords;
         $oContentArticle->extra_headers = $request->extra_headers;
         $oContentArticle->content_category_id = $request->content_category_id;
+        $oContentArticle->list_type = $request->list_type;
 
         $oldMainMultimedia = $oContentArticle->main_multimedia;
         if($request->hasFile('main_multimedia')){
