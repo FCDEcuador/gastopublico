@@ -12,9 +12,10 @@ use BlaudCMS\Configuration;
 use BlaudCMS\User;
 use BlaudCMS\ContentCategory;
 use BlaudCMS\ContentArticle;
-use BlaudCMS\CorruptionCase;
-use BlaudCMS\SuccessStory;
-use BlaudCMS\LegalLibrary;
+use BlaudCMS\Indicator;
+//use BlaudCMS\CorruptionCase;
+//use BlaudCMS\SuccessStory;
+//use BlaudCMS\LegalLibrary;
 use BlaudCMS\Menu;
 use BlaudCMS\MenuItem;
 
@@ -234,9 +235,9 @@ class MenuItemsController extends Controller
             
             'menuList' => Menu::pluck('name', 'id'),
             'contentArticlesList' => ContentArticle::all(),
-            'successStoriesList' => SuccessStory::all(),
-            'corruptionCasesList' => CorruptionCase::all(),
-            'legalLibraryList' => LegalLibrary::all(),
+            //'successStoriesList' => SuccessStory::all(),
+            //'corruptionCasesList' => CorruptionCase::all(),
+            //'legalLibraryList' => LegalLibrary::all(),
             
             'sMenuId' => $sMenuId,
             'sMenuItemId' => $sMenuItemId,
