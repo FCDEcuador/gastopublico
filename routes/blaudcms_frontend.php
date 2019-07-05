@@ -11,11 +11,12 @@
 |
 */
 
+/*
 Route::get('/', function(){
 	return redirect()->route('home');
-});
+});*/
 
-Route::get('/web', 'Frontend\HomeController@home')->name('home');
+Route::get('/', 'Frontend\HomeController@home')->name('home');
 
 
 Route::get('/sobre-nosotros', 'Frontend\StaticPagesController@about')->name('about-us');
