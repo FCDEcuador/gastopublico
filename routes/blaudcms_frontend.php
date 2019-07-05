@@ -26,5 +26,6 @@ Route::post('/contactenos','Frontend\StaticPagesController@contactSend')->name('
 Route::get('/indicadores', 'Frontend\IndicatorsController@index')->name('indicators');
 
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}', 'Frontend\ContentCategoriesController@index')->name('content-category');
+Route::match(['GET', 'POST'], '/{contentCategorySlug?}/tag/{sTag?}', 'Frontend\ContentCategoriesController@index')->name('content-category-with-tag');
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}/{contentArticleSlug?}', 'Frontend\ContentCategoriesController@show')->name('content-article');
 

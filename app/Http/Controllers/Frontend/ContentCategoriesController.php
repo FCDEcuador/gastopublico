@@ -83,7 +83,7 @@ class ContentCategoriesController extends Controller
      * @method GET / POST
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, $sContentCategorySlug = ''){
+    public function index(Request $request, $sContentCategorySlug = '', $isTag = '', $sTag = ''){
 
     	if( ! $sContentCategorySlug){
             return redirect()->route('home');
@@ -133,6 +133,13 @@ class ContentCategoriesController extends Controller
 
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
+        if($sTag){
+            $contentArticlesList = $oContentCategory->contentArticles()->where('tags', 'like', '%'.$sTag.'%')->orderBy('created_at', 'desc')->paginate(10);
+        }else{
+            $contentArticlesList = $oContentCategory->contentArticles()->orderBy('created_at', 'desc')->paginate(10);
+        }
+        
+
         $data = [
     		// Datos de configuracion general del sitio
             'title' => $title,
@@ -144,7 +151,8 @@ class ContentCategoriesController extends Controller
 
             // Datos para el contenido de la pagina
             'oContentCategory' => $oContentCategory,
-            'contentArticlesList' => $oContentCategory->contentArticles()->orderBy('created_at', 'desc')->paginate(10),
+            'contentArticlesList' => $contentArticlesList,
+            'tags' => $oContentCategory->tags,
     	];
 
     	
