@@ -183,7 +183,6 @@
                                   <option value=''>Seleccione el link interno para este item de menu</option>
                                   <optgroup label="Links Internos">
                                     <option value="/">Inicio</option>
-                                    <option value="sobre-el-observatorio">Sobre el Observatorio</option>
                                     <option value="indicadores">Indicadores</option>
                                     <option value="contactenos">Contacto</option>
                                   </optgroup>
