@@ -144,10 +144,17 @@ class ContentCategoriesController extends Controller
 
             // Datos para el contenido de la pagina
             'oContentCategory' => $oContentCategory,
-            'contentArticlesList' => $oContentCategory->contentArticles()->orderBy('created_at', 'desc')->paginate(3),
+            'contentArticlesList' => $oContentCategory->contentArticles()->orderBy('created_at', 'desc')->paginate(10),
     	];
 
-    	$view = view('frontend.content-category', $data);
+    	
+        if($oContentCategory->list_type == 'listado1'){
+            $view = view('frontend.content-category-listado1', $data);
+        }elseif($oContentCategory->list_type == 'listado2'){
+            $view = view('frontend.content-category-listado2', $data);
+        }elseif($oContentCategory->list_type == 'listado3'){
+            $view = view('frontend.content-category-listado3', $data);
+        }
         
         if($request->ajax()){
             $sections = $view->renderSections();

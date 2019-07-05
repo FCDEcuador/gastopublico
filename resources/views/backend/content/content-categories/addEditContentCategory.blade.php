@@ -151,6 +151,30 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="list_type"><strong>Tipo de Listado</strong></label>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        {!! Form::radio('list_type', 'listado1', is_object($oContentCategory) ? ($oContentCategory->list_type == 'listado1' ? true : false) : true, ['id' => 'list_type_1', 'class' => 'with-gap radio-col-light-blue']) !!}
+                                        <label for="list_type_1"><strong>Listado 1</strong></label>
+                                        <br />
+                                        <img src="{!! asset('public/images/listado1.PNG') !!}" width="200" alt="" title="">
+                                    </div>
+                                    <div class="col-md-4">
+                                        {!! Form::radio('list_type', 'listado2', is_object($oContentCategory) ? ($oContentCategory->list_type == 'listado2' ? true : false) : false, ['id' => 'list_type_2', 'class' => 'with-gap radio-col-light-blue']) !!}
+                                        <label for="list_type_2"><strong>Listado 2</strong></label>
+                                        <br />
+                                        <img src="{!! asset('public/images/listado2.PNG') !!}" width="200" alt="" title="">
+                                    </div>
+                                    <div class="col-md-4">
+                                        {!! Form::radio('list_type', 'listado3', is_object($oContentCategory) ? ($oContentCategory->list_type == 'listado3' ? true : false) : false, ['id' => 'list_type_3', 'class' => 'with-gap radio-col-light-blue']) !!}
+                                        <label for="list_type_3"><strong>Listado 3</strong></label>
+                                        <br />
+                                        <img src="{!! asset('public/images/listado3.PNG') !!}" width="200" alt="" title="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="meta_description">
                                     <strong>
                                         Meta Description

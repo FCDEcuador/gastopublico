@@ -23,7 +23,7 @@
 				      		@if($topMenuItems->isNotEmpty())
 				      			@foreach($topMenuItems as $oTopMenuItem)
 				      				@php
-		                          		$subTopMenuItems = $oTopMenuItem->menuItems;
+		                          		$subTopMenuItems = $oTopMenuItem->menuItems()->orderBy('order', 'asc')->get();
 		                        	@endphp
 		                        	@if($subTopMenuItems->isNotEmpty())
 		                        		<li class="nav-item dropdown">

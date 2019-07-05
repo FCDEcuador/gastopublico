@@ -28,6 +28,7 @@ class ContentCategoryUpdateRequest extends FormRequest
             'title' => 'required|unique:content_categories,title,'.$this->get('id'),
             'subtitle' => 'nullable',
             'tags' => 'nullable',
+            'list_type' => 'required',
             'meta_description' => 'nullable',
             'meta_keywords' => 'nullable',
             'extra_headers' => 'nullable',
@@ -48,6 +49,7 @@ class ContentCategoryUpdateRequest extends FormRequest
             'title.required' => 'Por favor ingrese el titulo de la categoria',
             'title.unique' => 'Ya existe una categoria con ese titulo',
             'content_category_id.exists' => 'La categoria de nivel superior seleccionada no existe, por favor seleccione otra',
+            'list_type.required' => 'Seleccione el tipo de listado',
         ];
     }
 }

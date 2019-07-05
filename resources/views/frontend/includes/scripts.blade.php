@@ -1,11 +1,11 @@
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>    
-    <script src="{{ asset('public/frontend/js/popper.min.js') }}"  crossorigin="anonymous"></script>
-    <script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"  crossorigin="anonymous"></script>
-    <script src="{{ asset('public/frontend/js/Chart.min.js') }}"  crossorigin="anonymous"></script>
-    <script defer src="{{ asset('public/frontend/js/all.js') }}"></script>
-    <script src="{{ asset('public/frontend/js/custom.js') }}"  crossorigin="anonymous"></script>
+    {!! Html::script('//code.jquery.com/jquery-3.3.1.min.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
+    {!! Html::script('public/frontend/js/popper.min.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
+    {!! Html::script('public/frontend/js/bootstrap.min.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
+    {!! Html::script('public/frontend/js/Chart.min.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
+    {!! Html::script('public/frontend/js/all.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
+    {!! Html::script('public/frontend/js/custom.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
 
     @yield('custom-js')
 

@@ -45,7 +45,6 @@ class ContentArticle extends Model
         'outstanding',
         'main_category',
         'main_home',
-        'list_type',
         'content_category_id',
     ];
 

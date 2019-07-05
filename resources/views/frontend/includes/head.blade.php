@@ -2,12 +2,13 @@
 	{!! $oConfiguration->another_mark_top_script !!}
 
 	{!! Html::meta(null, null, ['charset' => 'utf-8']) !!}
-	{!! Html::meta('viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no') !!}
+    {!! Html::meta(null, 'IE=edge', ['http-equiv' => 'X-UA-Compatible']) !!}
+    {!! Html::meta('viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no') !!}
 
 	{!! SEO::generate() !!}
+	<title>Observatorio de Gasto Público | @yield('title')</title>
 
-	<!-- Required meta tags -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('public/frontend/images/apple-icon-57x57.png') }}">
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ asset('public/frontend/images/apple-icon-57x57.png') }}">
 	<link rel="apple-touch-icon" sizes="60x60" href="{{ asset('public/frontend/images/apple-icon-60x60.png') }}">
 	<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('public/frontend/images/apple-icon-72x72.png') }}">
 	<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/frontend/images/apple-icon-76x76.png') }}">
@@ -26,19 +27,19 @@
 	<meta name="theme-color" content="#ffffff">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css') }}"  crossorigin="anonymous">
+    {!! Html::style('public/frontend/css/bootstrap.min.css', ['crossorigin' => 'anonymous']) !!}
     <!-- Font-awesome CSS -->
-    <link href="{{ asset('public/frontend/css/all.css') }}" rel="stylesheet"> <!--load all styles -->
-
+    {!! Html::style('public/frontend/css/all.css', ['rel' => 'stylesheet']) !!}
 	
 
-    <link rel="stylesheet" href="{{ asset('public/frontend/css/custom.css') }}" >
+    {!! Html::style('public/frontend/css/custom.css', ['rel' => 'stylesheet']) !!}
 
-    <script src="{{ asset('public/frontend/js/jquery-3.3.1.slim.min.js') }}"  crossorigin="anonymous"></script>
-    <script src="{{ asset('public/frontend/js/Chart.min.js') }}"  crossorigin="anonymous"></script>
-    <script src="{{ asset('public/frontend/js/amcharts.js') }}"  crossorigin="anonymous"></script>
-    <script src="{{ asset('public/frontend/js/serial.js') }}"  crossorigin="anonymous"></script>
+
+    {!! Html::script('public/frontend/js/jquery-3.3.1.slim.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/frontend/js/Chart.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/frontend/js/amcharts.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/frontend/js/serial.js', ['type' => 'text/javascript']) !!}
     <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c6df5f8f2935ace"></script>
+    {!! Html::script('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c6df5f8f2935ace', ['type' => 'text/javascript']) !!}
 
 	@yield('custom-css')

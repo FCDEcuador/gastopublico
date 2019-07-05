@@ -225,6 +225,7 @@ class ContentCategoriesController extends Controller
         $oContentCategory->slug = $this->oSlugify->slugify($request->title);
         $oContentCategory->subtitle = $request->subtitle;
         $oContentCategory->tags = explode(',', $request->tags);
+        $oContentCategory->list_type = $request->list_type;
         $oContentCategory->meta_description = $request->meta_description;
         $oContentCategory->meta_keywords = $request->meta_keywords;
         $oContentCategory->extra_headers = $request->extra_headers;
@@ -358,6 +359,7 @@ class ContentCategoriesController extends Controller
         $oContentCategory->slug = $this->oSlugify->slugify($request->title);
         $oContentCategory->subtitle = $request->subtitle;
         $oContentCategory->tags = explode(',', $request->tags);
+        $oContentCategory->list_type = $request->list_type;
         $oContentCategory->meta_description = $request->meta_description;
         $oContentCategory->meta_keywords = $request->meta_keywords;
         $oContentCategory->extra_headers = $request->extra_headers;

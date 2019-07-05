@@ -14,13 +14,13 @@ jQuery('.flotante').mouseout(function(){
 
 
 
-	jQuery('#emailDenuncia').on('show.bs.modal', function (event) {
-		  var button = $(event.relatedTarget) // Button that triggered the modal
-		  var recipient = button.data('whatever') // Extract info from data-* attributes
-		  var receptor = button.data('receptor') // Valor email
-		  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-		  var modal = $(this)
-		  modal.find('.modal-title').html('<i class="fas fa-envelope mr-3 fz32 text-warning"></i> Envía un mensaje a ' + recipient)
-		  modal.find('.modal-body #receptor').val(receptor)
-		})
+jQuery('#emailDenuncia').on('show.bs.modal', function (event) {
+	  var button = $(event.relatedTarget) // Button that triggered the modal
+	  var recipient = button.data('whatever') // Extract info from data-* attributes
+	  var receptor = button.data('receptor') // Valor email
+	  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+	  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+	  var modal = $(this)
+	  modal.find('.modal-title').html('<i class="fas fa-envelope mr-3 fz32 text-warning"></i> Envía un mensaje a ' + recipient)
+	  modal.find('.modal-body #receptor').val(receptor)
+	})

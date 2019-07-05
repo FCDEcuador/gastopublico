@@ -16,17 +16,19 @@ class CreateContentArticlesFields extends Migration
     public function up()
     {
 
+        /*
         $output = new ConsoleOutput();
         $bar = new ProgressBar($output, 1);
         $bar->start();
 
-        Schema::table('content_articles', function ($table) {
+        Schema::table('content_categories', function ($table) {
             $table->string('list_type')->nullable()->after('main_home');
         });
         $bar->advance();
 
         $bar->finish();
         print("\n");
+        */
     }
 
     /**
@@ -36,16 +38,18 @@ class CreateContentArticlesFields extends Migration
      */
     public function down()
     {
+        /*
         $output = new ConsoleOutput();
         $bar = new ProgressBar($output, 1);
         $bar->start();
 
-        Schema::table('content_articles', function ($table) {
+        Schema::table('content_categories', function ($table) {
             $table->dropColumn(['list_type']);
         });
         $bar->advance();
 
         $bar->finish();
         print("\n");
+        */
     }
 }

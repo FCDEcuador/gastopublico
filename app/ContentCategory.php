@@ -34,6 +34,7 @@ class ContentCategory extends Model
         'title',
         'subtitle',
         'tags',
+        'list_type',
         'meta_description',
         'meta_keywords',
         'extra_headers',

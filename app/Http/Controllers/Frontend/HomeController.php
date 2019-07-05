@@ -121,13 +121,13 @@ class HomeController extends Controller
 
             // menus de navegacion
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
+            
+            // Datos para el contenido de la pagina
             'aContentCategories' => $aContentCategories,
             'mainArticles' => ContentArticle::orderBy('created_at', 'desc')->skip(0)->take(3)->get(),
             'secondaryArticles' => ContentArticle::orderBy('created_at', 'desc')->skip(3)->take(4)->get(),
             'listArticles' => ContentArticle::orderBy('created_at', 'desc')->skip(7)->take(3)->get(),
             'aIndicators' => Indicator::where('unity', 'USD')->orderBy('created_at', 'desc')->skip(0)->take(4)->get(),
-
-            // Datos para el contenido de la pagina
             
     	];
 

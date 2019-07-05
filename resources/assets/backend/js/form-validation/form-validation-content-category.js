@@ -18,6 +18,9 @@ var FormContentCategoryValidation = function() {
                 },
                 title: {
                     required: true
+                },
+                list_type: {
+                    required: true
                 }
             },
             messages: {
@@ -26,6 +29,9 @@ var FormContentCategoryValidation = function() {
                 },
                 title: {
                     required: 'Por favor ingrese el título de la categoría.'
+                },
+                list_type: {
+                    required: 'Por favor seleccione el tipo de listado'
                 }
             },
 
