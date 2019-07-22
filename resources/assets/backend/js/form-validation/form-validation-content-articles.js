@@ -179,8 +179,12 @@ var FormContentArticlesValidation = function() {
 
 $(document).ready(function() {
     FormContentArticlesValidation.init();
+
     CKEDITOR.replace('content', CKEditorOptions);
     $(".select2").select2();
+
+    $('#publication_date').bootstrapMaterialDatePicker({ format: 'YYYY-MM-DD HH:mm' });
+    $('#release_date').bootstrapMaterialDatePicker({ format: 'YYYY-MM-DD HH:mm' });
 
     $('#main_multimedia').dropify({
         messages: {

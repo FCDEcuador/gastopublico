@@ -12,6 +12,7 @@
     {!! Html::style('public/backend/assets/plugins/bootstrap-select/bootstrap-select.min.css') !!}
     {!! Html::style('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') !!}
     {!! Html::style('public/backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') !!}
+    {!! Html::style('public/backend/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') !!}
 
 @endsection
 
@@ -112,6 +113,35 @@
                                     <option value="" selected="selected">Seleccione una categoría de contenido ....</option>
                                     {!! BlaudCMS\ContentCategory::dropDownItems(null, $sContentCategoryId) !!}
                                 </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="publication_date"><strong>Fecha de Publicación</strong></label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="content-article-publication_date">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                            {!! Form::text('publication_date', null, ['id' => 'publication_date', 'placeholder' => 'Seleccione la fecha de publicación del artículo', 'class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="release_date"><strong>Fecha de Despublicación</strong></label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="content-article-release_date">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                            {!! Form::text('release_date', null, ['id' => 'release_date', 'placeholder' => 'Seleccione la fecha de despublicación del artículo', 'class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -244,6 +274,8 @@
     {!! Html::script('public/backend/assets/plugins/bootstrap-select/bootstrap-select.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/moment/moment.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js', ['type' => 'text/javascript']) !!}
     <!-- wysuhtml5 Plugin JavaScript -->
     {!! Html::script('public/vendor/unisharp/laravel-ckeditor/ckeditor.js', ['type' => 'text/javascript']) !!}
     <script type="text/javascript">

@@ -45,6 +45,8 @@ class ContentArticle extends Model
         'outstanding',
         'main_category',
         'main_home',
+        'publication_date',
+        'release_date',
         'content_category_id',
     ];
 
@@ -129,6 +131,19 @@ class ContentArticle extends Model
 
     public function scopeNoMainCategory($sQuery){
         return $sQuery->whereMainCategory(0);
+    }
+
+    public function scopeAvailable($sQuery){
+        return $sQuery->where(function($sQuery){
+              return $sQuery->where('publication_date', '0000-00-00 00:00:00')
+                            ->orWhereNull('publication_date')
+                            ->orWhere('publication_date', '<=', now());
+        })
+        ->where(function($sQuery){
+            return $sQuery->where('release_date', '0000-00-00 00:00:00')
+                            ->orWhereNull('release_date')
+                            ->orWhere('release_date', '>=', now());
+        });
     }
 
 

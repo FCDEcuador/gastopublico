@@ -63,8 +63,10 @@
                                         <tr>
                                             <th><i class="fa fa-cogs"></i></th>
                                             <th>Imagen</th>
-                                            <th>Titulo</th>
                                             <th>Categoría</th>
+                                            <th>Titulo</th>
+                                            <th>Fecha de Publicación</th>
+                                            <th>Fecha de Despublicación</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -108,8 +110,11 @@
                                                     <img src="{!! asset('public/backend/assets/images/default-thumbnail.png') !!}" class="img-circle" height="40" alt="{!! $oContentArticle->title !!}" />
                                                   @endif
                                                 </td>
-                                                <td> {!! $oContentArticle->title !!} </td>
                                                 <td> {!! $oContentArticle->contentCategory->name !!}</td>
+                                                <td> {!! $oContentArticle->title !!} </td>
+                                                <td> {!! TimeFormat::dateShortFormat($oContentArticle->publication_date) !!} </td>
+                                                <td> {!! TimeFormat::dateShortFormat($oContentArticle->release_date) !!} </td>
+                                                
                                               </tr>
                                             @endforeach
                                         @else
