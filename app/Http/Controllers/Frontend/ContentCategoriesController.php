@@ -134,9 +134,9 @@ class ContentCategoriesController extends Controller
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
         if($sTag){
-            $contentArticlesList = $oContentCategory->contentArticles()->where('tags', 'like', '%'.$sTag.'%')->orderBy('created_at', 'desc')->paginate(10);
+            $contentArticlesList = $oContentCategory->contentArticles()->available()->where('tags', 'like', '%'.$sTag.'%')->orderBy('publication_date', 'desc')->paginate(10);
         }else{
-            $contentArticlesList = $oContentCategory->contentArticles()->orderBy('created_at', 'desc')->paginate(10);
+            $contentArticlesList = $oContentCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->paginate(10);
         }
         
 
@@ -227,6 +227,20 @@ class ContentCategoriesController extends Controller
             }
             return redirect()->route('content-category', [$oContentCategory->slug]);
         }
+
+        $ahora = date('Y-m-d H:i:s');
+        if( ($oContentArticle->publication_date && $oContentArticle->publication_date >= $ahora) || ($oContentArticle->release_date && $oContentArticle->release_date <= $ahora) ){
+            if($request->ajax()){
+                $aResponseData = [
+                    'type' => 'alert', 
+                    'title' => 'Gasto Público', 
+                    'message' => 'UPS!. Parece que la noticia que seleccionaste no existe o fue movida.', 
+                    'class' => 'error',
+                ];
+                return response()->json($aResponseData, 404);
+            }
+            return redirect()->route('content-category', [$oContentCategory->slug]);
+        }
         
         $aMetas = MetaTag::all();
         $title = $oContentCategory->name;
@@ -274,8 +288,8 @@ class ContentCategoriesController extends Controller
             'contentCategoriesList' => ContentCategory::has('contentArticles')->get(),
             'oContentCategory' => $oContentCategory,
             'oContentArticle' => $oContentArticle,
-            'contentArticlesListRecent' => $oContentCategory->contentArticles()->outstandings()->take(2)->orderBy('created_at', 'desc')->get(),
-            'contentArticlesList' => $oContentCategory->contentArticles()->noOutstandings()->orderBy('created_at', 'desc')->paginate(2),
+            'contentArticlesListRecent' => $oContentCategory->contentArticles()->available()->outstandings()->take(2)->orderBy('publication_date', 'desc')->get(),
+            'contentArticlesList' => $oContentCategory->contentArticles()->available()->noOutstandings()->orderBy('publication_date', 'desc')->paginate(2),
     	];
 
     	$view = view('frontend.content-article', $data);
