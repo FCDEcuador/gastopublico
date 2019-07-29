@@ -209,7 +209,7 @@
 
                             <div class="form-group">
                                 <label for="tags"><strong>Tags</strong> </label>
-                                {!! Form::text('tags', is_object($oContentArticle) ? $oContentArticle->tags : null, ['id' => 'tags', 'placeholder' => 'Agregue los tags', 'class' => 'form-control', 'data-role' => 'tagsinput']) !!}
+                                {!! Form::text('tags', is_object($oContentArticle) ? (is_array($oContentArticle->tags) ? implode(',', $oContentArticle->tags) : $oContentArticle->tags) : null, ['id' => 'tags', 'placeholder' => 'Agregue los tags', 'class' => 'form-control', 'data-role' => 'tagsinput']) !!}
                             </div>
 
                             <div class="form-group">
