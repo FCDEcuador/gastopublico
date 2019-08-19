@@ -18,6 +18,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
+        /*
+            @Autor Raúl Chauvin
+            @FechaCreacion 2019/08/19
+
+            Forzando navegacion por https
+        */
+        \Illuminate\Support\Facades\URL::forceScheme('https');
+
         /*
             @Autor Raúl Chauvin
             @FechaCreacion 2018/05/02
