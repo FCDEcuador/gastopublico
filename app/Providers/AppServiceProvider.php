@@ -25,7 +25,10 @@ class AppServiceProvider extends ServiceProvider
 
             Forzando navegacion por https
         */
-        \Illuminate\Support\Facades\URL::forceScheme('https');
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+        
 
         /*
             @Autor Raúl Chauvin
