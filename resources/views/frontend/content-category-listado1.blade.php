@@ -58,7 +58,7 @@
 
 				<div class="row mt-3 pl-3 pr-3 pl-sm-0 pr-sm-0">
 					
-					@if($contentArticlesList->isNotNEmpty())
+					@if($contentArticlesList->isNotEmpty())
 						@foreach($contentArticlesList as $oContentArticleList)
 							<div class="col-12 mb-3 border-bottom border-success pb-3">
 								<div class="row">
