@@ -85,7 +85,7 @@
 						<ul class="text-muted">
 							@if($contentCategoriesList->isNotEmpty())
 								@foreach($contentCategoriesList as $oContentCategoryList)
-									<li><a href="{!! route('content-category', [$oContentCategory->slug]) !!}" class="text-muted">={!! $oContentCategory->name !!}</a></li>
+									<li><a href="{!! route('content-category', [$oContentCategoryList->slug]) !!}" class="text-muted">={!! $oContentCategoryList->name !!}</a></li>
 								@endforeach
 							@endif
 						</ul>
