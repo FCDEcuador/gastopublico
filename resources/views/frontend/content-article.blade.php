@@ -38,17 +38,18 @@
 		<!-- BEGIN SECCION CONTENIDDO -->
 			<div class="col-sm-8">
 				<div class="shadow p-3 mb-5 bg-white rounded">
-					<h1 class=" text-default ">{!! $oContentArticle->title !!}</h1>
-					<img src="{!! $oStorage->url($oContentArticle->main_multimedia) !!}" alt="{!! $oContentArticle->title !!}" title="{!! $oContentArticle->title !!}" class=" w-100">
 					<div class="row mt-1">
 					    <div class="col align-self-start text-muted">
 					      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}
 					    </div>
 				  	</div>
+					<h1 class=" text-default ">{!! $oContentArticle->title !!}</h1>
+					<img src="{!! $oStorage->url($oContentArticle->main_multimedia) !!}" alt="{!! $oContentArticle->title !!}" title="{!! $oContentArticle->title !!}" class=" w-100">
+					
 				  	<div class="content mt-3">
 					  	
 						<div class="text-justify text-muted">
-							<p>{!! $oContentArticle->summary !!}</p>
+							<i><b>{!! $oContentArticle->summary !!}</b></i>
 							{!! $oContentArticle->content !!}
 						</div>
 					</div>
@@ -78,6 +79,15 @@
 					@endif
 									
 				</div>
+				
+				<!-- END lo mas reciente -->
+				<div class="compartir shadow p-3 mb-4 bg-white rounded">
+					<h6 class="">Compartir</h6>
+					<div class="elemento mt-3">
+						<div class="addthis_inline_share_toolbox d-flex justify-content-center"></div>
+					</div>
+				</div>
+
 				<div class="compartir shadow p-3 mb-4 bg-white rounded">
 					<h6 class="">Ejes temáticos</h6>
 					<div class="elemento mt-3">
@@ -89,14 +99,6 @@
 								@endforeach
 							@endif
 						</ul>
-					</div>
-				</div>
-				<!-- END lo mas reciente -->
-				<div class="compartir shadow p-3 mb-4 bg-white rounded">
-					<h6 class="">Compartir</h6>
-					<div class="elemento mt-3">
-						<div class="addthis_inline_share_toolbox d-flex justify-content-center"></div>
-						<div class="mt-2 text-center text-default">Observatorio Anticorrupción</div>
 					</div>
 				</div>
 				
