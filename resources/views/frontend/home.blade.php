@@ -122,28 +122,8 @@
 					</div>
 				</div>
 				<div class="col-sm-4">
-					<!-- BEGIN SECCION LATERAL -->
 					
-					<article class="shadow p-3 rounded nuevoB">
-						<div class="elemento">
-							<div class="div-relative" >
-	                            <a class="twitter-timeline" data-lang="es" data-height="300" data-link-color="#487d27" href="https://twitter.com/EsMiPlataEC?ref_src=twsrc%5Etfw">Tweets de EsMiPlataEC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	                        </div>
-						</div>				
-					</article>
-					
-					<article class="shadow p-3 mt-3 rounded naranjoB">
-						<div class="elemento">
-							<div class="div-relative">
-	                            <h5 class="text-center blanco"><a href="#" class="text-white">Fundación de Ciudadania y Desarrollo</a></h5>
-	                            <p class="text-center mb-0">Conoce nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
-	                            
-	                        </div>
-						</div>				
-					</article>
-				</div>
-				
-				<div class="col-md-4 mb-3 mb-md-0">
+
 					<div class="p-3 shadow bg-white rounded">
 						<div class="col-12 mr-sm-3">
 							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Noticias Observatorio <small><a href="{{ url('/informes-del-observatorio') }}">ver más</a></small></h1>
@@ -191,6 +171,31 @@
 						
 			      	<!--  END CAROUSEL -->
 			      </div>
+
+
+				</div>
+				
+				<div class="col-md-4 mb-3 mb-md-0">
+
+
+					<article class="shadow p-3 rounded nuevoB">
+						<div class="elemento">
+							<div class="div-relative" >
+	                            <a class="twitter-timeline" data-lang="es" data-height="300" data-link-color="#487d27" href="https://twitter.com/EsMiPlataEC?ref_src=twsrc%5Etfw">Tweets de EsMiPlataEC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	                        </div>
+						</div>				
+					</article>
+					
+					<article class="shadow p-3 mt-3 rounded naranjoB">
+						<div class="elemento">
+							<div class="div-relative">
+	                            <h5 class="text-center blanco"><a href="#" class="text-white">Fundación de Ciudadania y Desarrollo</a></h5>
+	                            <p class="text-center mb-0">Conoce nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
+	                            
+	                        </div>
+						</div>				
+					</article>
+
 				</div>
 			</div>
 		<!-- END SECCION CASOS DE CORRUPCION -->

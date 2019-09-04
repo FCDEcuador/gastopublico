@@ -49,7 +49,7 @@
 				  	<div class="content mt-3">
 					  	
 						<div class="text-justify text-muted">
-							<i><b>{!! $oContentArticle->summary !!}</b></i>
+							<p><i><b>{!! $oContentArticle->summary !!}</b></i></p>
 							{!! $oContentArticle->content !!}
 						</div>
 					</div>
