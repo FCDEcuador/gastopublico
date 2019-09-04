@@ -172,6 +172,16 @@
 			      	<!--  END CAROUSEL -->
 			      </div>
 
+			      <article class="shadow p-3 mt-3 rounded naranjoB">
+						<div class="elemento">
+							<div class="div-relative">
+	                            <h5 class="text-center blanco"><a href="#" class="text-white">Fundación de Ciudadania y Desarrollo</a></h5>
+	                            <p class="text-center mb-0">Conoce nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
+	                            
+	                        </div>
+						</div>				
+					</article>
+
 
 				</div>
 				
@@ -181,20 +191,12 @@
 					<article class="shadow p-3 rounded nuevoB">
 						<div class="elemento">
 							<div class="div-relative" >
-	                            <a class="twitter-timeline" data-lang="es" data-height="300" data-link-color="#487d27" href="https://twitter.com/EsMiPlataEC?ref_src=twsrc%5Etfw">Tweets de EsMiPlataEC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	                            <a class="twitter-timeline" data-lang="es" data-height="550" data-link-color="#487d27" href="https://twitter.com/EsMiPlataEC?ref_src=twsrc%5Etfw">Tweets de EsMiPlataEC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	                        </div>
 						</div>				
 					</article>
 					
-					<article class="shadow p-3 mt-3 rounded naranjoB">
-						<div class="elemento">
-							<div class="div-relative">
-	                            <h5 class="text-center blanco"><a href="#" class="text-white">Fundación de Ciudadania y Desarrollo</a></h5>
-	                            <p class="text-center mb-0">Conoce nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
-	                            
-	                        </div>
-						</div>				
-					</article>
+					
 
 				</div>
 			</div>
