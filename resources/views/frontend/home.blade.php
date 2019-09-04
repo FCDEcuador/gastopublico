@@ -63,14 +63,14 @@
 					
 					<div class="shadow p-3 mb-4 bg-white rounded">
 						<div class="col-12 mr-sm-3">
-							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Plublicaciones  <small><a href="{{ url('/informes-del-observatorio') }}">ver más</a></small></h1>
+							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Publicaciones  <small><a href="{{ url('/informes-del-observatorio') }}">ver más</a></small></h1>
 			    		</div>
 						
 						@if($secondaryArticles->isNotEmpty())
 							@foreach($secondaryArticles as $oSecondaryArticle)
 								<div class="row elemento no-gutters">
 									<div class="col-sm-5">
-										<img src="{!! $oStorage->url($oSecondaryArticle->main_multimedia) !!}" alt="{{ $oSecondaryArticle->title }}" title="{{ $oSecondaryArticle->title }}" class="w-100 mt-2">
+										<a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oSecondaryArticle->main_multimedia) !!}" alt="{{ $oSecondaryArticle->title }}" title="{{ $oSecondaryArticle->title }}" class="w-100 mt-2"></a>
 									</div>
 									<div class="col-sm-7">
 										<h6 class="mb-0 ml-sm-3 mb-0 mt-3 mt-sm-0"><a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted">{{ $oSecondaryArticle->summary }}</a></h6>
@@ -127,7 +127,7 @@
 					<article class="shadow p-3 rounded nuevoB">
 						<div class="elemento">
 							<div class="div-relative" style="height: 300px;">
-	                            <a class="twitter-timeline" href="https://twitter.com/ECSinCorrupcion?ref_src=twsrc%5Etfw">Tweets de ECSinCorrupcion</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	                            <a class="twitter-timeline" style="height: 300px;" href="https://twitter.com/ECSinCorrupcion?ref_src=twsrc%5Etfw">Tweets de ECSinCorrupcion</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	                        </div>
 						</div>				
 					</article>
