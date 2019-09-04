@@ -191,7 +191,7 @@
 					<article class="shadow p-3 rounded nuevoB">
 						<div class="elemento">
 							<div class="div-relative" >
-	                            <a class="twitter-timeline" data-lang="es" data-height="550" data-link-color="#487d27" href="https://twitter.com/EsMiPlataEC?ref_src=twsrc%5Etfw">Tweets de EsMiPlataEC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	                            <a class="twitter-timeline" data-lang="es" data-height="600" data-link-color="#487d27" href="https://twitter.com/EsMiPlataEC?ref_src=twsrc%5Etfw">Tweets de EsMiPlataEC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	                        </div>
 						</div>				
 					</article>
