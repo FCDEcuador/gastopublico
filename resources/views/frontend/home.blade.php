@@ -135,8 +135,8 @@
 					<article class="shadow p-3 mt-3 rounded naranjoB">
 						<div class="elemento">
 							<div class="div-relative">
-	                            <h3 class="text-center blanco"><a href="#" class="text-white">Fundación de Ciudadania y Desarrollo</a></h3>
-	                            <p class="text-center">Conoce los nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
+	                            <h5 class="text-center blanco"><a href="#" class="text-white">Fundación de Ciudadania y Desarrollo</a></h5>
+	                            <p class="text-center mb-0">Conoce nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
 	                            
 	                        </div>
 						</div>				
@@ -201,8 +201,8 @@
 			<div class="container mb-3">
 				<div class="row pb-3 pt-3 shadow bg-white rounded">
 					<div class="col-12">
-						<h1 class="titulo border-bottom border-info text-default mb-3">Temas</h1>
-						<div class="text-right text-muted fz12 mt-1 mb-2">Categorias principales de contenido.</div>
+						<h1 class="titulo border-bottom border-info text-default mb-3">Tags</h1>
+						<div class="text-right text-muted fz12 mt-1 mb-2">Tags principales de contenido.</div>
 					</div>
 					<div class="col-sm-12">
 						<div class="lista-inline text-center flex">
