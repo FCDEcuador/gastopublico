@@ -28,9 +28,9 @@
 							    @foreach($mainArticles as $oMainArticle)
 								    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
 								    	<div class="row no-gutters">
-								    		<img class="d-block img-fluid mx-auto img-corrupcion" src="{!! $oStorage->url($oMainArticle->main_multimedia) !!}" alt="{{ $oMainArticle->title }}">
-								    		<div class="col-sm-12 pt-3 pr-5 pl-5">
-								    			<h6><a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}">{{ $oMainArticle->title }}</a></h6>
+								    		<a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}"><img class="d-block img-fluid mx-auto img-corrupcion" src="{!! $oStorage->url($oMainArticle->main_multimedia) !!}" alt="{{ $oMainArticle->title }}"></a>
+								    		<div class="col-sm-12 pt-3">
+								    			<h5><a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}">{{ $oMainArticle->title }}</a></h5>
 								    			<div class="pt-1  text-justify text-muted">{{ $oMainArticle->summary }}</div>
 								    		</div>
 								    	</div>
@@ -63,7 +63,7 @@
 					
 					<div class="shadow p-3 mb-4 bg-white rounded">
 						<div class="col-12 mr-sm-3">
-							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Plublicaciones  <small>ver más</small></h1>
+							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Plublicaciones  <small><a href="{{ url('/informes-del-observatorio') }}">ver más</small></h1>
 			    		</div>
 						
 						@if($secondaryArticles->isNotEmpty())
@@ -127,11 +127,7 @@
 					<article class="shadow p-3 rounded nuevoB">
 						<div class="elemento">
 							<div class="div-relative">
-	                            <h3 class="text-center blanco"><b>Nuestro Blog</b></h3>
-	                            <p class="text-center">Conoce los nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
-	                            <p class="text-center mt-3">
-	                                <a href="http://blog.gastopublico.org/" role="button" class="btn btn-light btn-sm">Ver detalles</a>
-	                            </p>
+	                            <a class="twitter-timeline" href="https://twitter.com/ECSinCorrupcion?ref_src=twsrc%5Etfw">Tweets de ECSinCorrupcion</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	                        </div>
 						</div>				
 					</article>
@@ -139,11 +135,9 @@
 					<article class="shadow p-3 mt-3 rounded naranjoB">
 						<div class="elemento">
 							<div class="div-relative">
-	                            <h3 class="text-center blanco"><b>Nuestro Blog</b></h3>
+	                            <h3 class="text-center blanco"><b><a href="#">Fundación de Ciudadania y Desarrollo</a></b></h3>
 	                            <p class="text-center">Conoce los nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
-	                            <p class="text-center mt-3">
-	                                <a href="http://blog.gastopublico.org/" role="button" class="btn btn-light btn-sm">Ver detalles</a>
-	                            </p>
+	                            
 	                        </div>
 						</div>				
 					</article>
@@ -165,7 +159,7 @@
 								    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
 								    	<div class="row">
 								    		<div class="col-sm-12">
-								    			<img class="d-block img-fluid mx-auto img-corrupcion" src="{!! $oStorage->url($oListArticle->main_multimedia) !!}" alt="{{ $oListArticle->title }}">
+								    			<a href="{!! route('content-article', [$oListArticle->contentCategory->slug, $oListArticle->slug]) !!}" class="subtitulo"><img class="d-block img-fluid mx-auto img-corrupcion" src="{!! $oStorage->url($oListArticle->main_multimedia) !!}" alt="{{ $oListArticle->title }}"></a>
 								    			<div class="text-right text-muted fz12 mt-3">{!! TimeFormat::dateShortFormat($oListArticle->created_at) !!}</div>
 								    			<h6 class="mt-3"><a href="{!! route('content-article', [$oListArticle->contentCategory->slug, $oListArticle->slug]) !!}" class="subtitulo">{{ $oListArticle->title }}</a></h6>
 								    			<div class="pb-3 text-justify text-muted">{{ $oListArticle->summary }}</div>
