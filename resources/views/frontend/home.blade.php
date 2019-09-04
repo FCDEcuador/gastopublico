@@ -63,7 +63,7 @@
 					
 					<div class="shadow p-3 mb-4 bg-white rounded">
 						<div class="col-12 mr-sm-3">
-							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Plublicaciones  <small><a href="{{ url('/informes-del-observatorio') }}">ver más</small></h1>
+							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Plublicaciones  <small><a href="{{ url('/informes-del-observatorio') }}">ver más</a></small></h1>
 			    		</div>
 						
 						@if($secondaryArticles->isNotEmpty())
@@ -102,17 +102,17 @@
 							@foreach($aIndicators as $oIndicator)
 								<div class="row">
 			                        <div class="col-12 align-self-center">
-			                            <h6 class="text-center sinmargen">
+			                            <h5 class="text-center sinmargen">
 			                            	{{ $oIndicator->title }}
-			                        	</h6>
+			                        	</h5>
 			                        </div>
 			                        <div class="col-12 align-self-center">
 			                            <p class="mb-1 text-center fz12">
 			                                {{ $oIndicator->unity == 'USD' ? 'Dólares Americanos' : 'Porcentaje' }}
 			                            </p>
-			                            <h6 class=" text-center">
+			                            <h5 class=" text-center">
 			                                {{ $oIndicator->unity == 'USD' ? 'USD' : '' }} {{ $oIndicator->value }} {{ $oIndicator->unity == 'Porcentaje' ? '%' : '' }}
-			                            </h6>
+			                            </h5>
 			                        </div>
 			                    </div>
 			                    <hr class="border-success mt-1 mb-3">
@@ -126,7 +126,7 @@
 					
 					<article class="shadow p-3 rounded nuevoB">
 						<div class="elemento">
-							<div class="div-relative">
+							<div class="div-relative" style="height: 300px;">
 	                            <a class="twitter-timeline" href="https://twitter.com/ECSinCorrupcion?ref_src=twsrc%5Etfw">Tweets de ECSinCorrupcion</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	                        </div>
 						</div>				
@@ -135,7 +135,7 @@
 					<article class="shadow p-3 mt-3 rounded naranjoB">
 						<div class="elemento">
 							<div class="div-relative">
-	                            <h3 class="text-center blanco"><b><a href="#">Fundación de Ciudadania y Desarrollo</a></b></h3>
+	                            <h3 class="text-center blanco"><a href="#" class="text-white">Fundación de Ciudadania y Desarrollo</a></h3>
 	                            <p class="text-center">Conoce los nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
 	                            
 	                        </div>
