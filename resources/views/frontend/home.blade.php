@@ -126,8 +126,8 @@
 					
 					<article class="shadow p-3 rounded nuevoB">
 						<div class="elemento">
-							<div class="div-relative" style="height: 300px;">
-	                            <a class="twitter-timeline" style="height: 300px;" href="https://twitter.com/ECSinCorrupcion?ref_src=twsrc%5Etfw">Tweets de ECSinCorrupcion</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+							<div class="div-relative" >
+	                            <a class="twitter-timeline" data-lang="es" data-height="300" data-link-color="#487d27" href="https://twitter.com/ECSinCorrupcion?ref_src=twsrc%5Etfw">Tweets de ECSinCorrupcion</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	                        </div>
 						</div>				
 					</article>
@@ -146,7 +146,7 @@
 				<div class="col-md-4 mb-3 mb-md-0">
 					<div class="p-3 shadow bg-white rounded">
 						<div class="col-12 mr-sm-3">
-							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Noticias Observatorio <small>ver más</small></h1>
+							<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Noticias Observatorio <small><a href="{{ url('/informes-del-observatorio') }}">ver más</a></small></h1>
 							<div class="text-right text-muted fz12 mt-1 mb-2">Infórmate de nuestras actividades</div>
 			    		</div>
 						<!--  BEGIN CAROUSEL  -->
