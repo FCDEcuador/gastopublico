@@ -110,7 +110,7 @@
 				</div>
 
 				<div class="compartir shadow p-3 mb-4 bg-white rounded">
-					<h5 class="">Ejes temáticos</h5>
+					<h5 class="">Lista de Tags</h5>
 					<div class="elemento mt-3">
 						
 						<ul class="text-muted">
@@ -126,31 +126,6 @@
 			</div>
 		<!-- END SECCION LATERAL -->
 			
-		</div>
-
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="titulo border-bottom border-success ext-success text-uppercase">Conoce más casos</div>
-			</div>
-			<!-- BEGIN SECCION PUBLICACIONES -->
-			<div class="row mt-3 no-gutters">
-				@if($contentArticlesList->isNotEmpty())
-					@foreach($contentArticlesList as $oContentArticleList)
-						<div class="col-sm-6">
-							<div class="row no-gutters">
-								<div class="col-4 d-sm-flex align-items-center pl-3 pr-sm-3">
-									<img class="d-block w-100" src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}">
-								</div>
-								<div class="col-8 pl-3 pl-sm-0 pr-3 pr-sm-0">
-									<h3 class="subtitulo text-default text-uppercase"><a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-default">{!! $oContentArticleList->title !!}</a></h3>
-									<p class="text-justify"><a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-secondary">{!! $oContentArticleList->summary !!} </a></p>
-								</div>
-							</div>
-						</div>
-					@endforeach
-				@endif
-			</div>
-		<!-- END SECCION PUBLICACIONES -->	
 		</div>
 
 
