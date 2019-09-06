@@ -62,11 +62,11 @@
 			<div class="col-sm-4">
 				<!-- BEGIN lo mas reciente -->
 				<div class="shadow p-3 mb-4 bg-white rounded">
-					<h6 class="">Lo más reciente</h6>
+					<h5 class="">Lo más reciente</h5>
 					@if($contentArticlesListRecent->isNotEmpty())
 						@foreach($contentArticlesListRecent as $oContentArticleRecent)
 							<div class="elemento">
-								<img src="{!! $oStorage->url($oContentArticleRecent->main_multimedia) !!}" alt="{!! $oContentArticleRecent->title !!}" title="{!! $oContentArticleRecent->title !!}" class="w-100 mt-2">
+								<a href="{!! route('content-article', [$oContentArticle->contentCategory->slug, $oContentArticleRecent->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oContentArticleRecent->main_multimedia) !!}" alt="{!! $oContentArticleRecent->title !!}" title="{!! $oContentArticleRecent->title !!}" class="w-100 mt-2"></a>
 								<h6 class="mt-3"><a href="{!! route('content-article', [$oContentArticle->contentCategory->slug, $oContentArticleRecent->slug]) !!}" class="text-muted">{!! $oContentArticleRecent->title !!}</a></h6>
 								<div class="row mt-1">
 								    <div class="col align-self-start text-muted">
@@ -79,17 +79,38 @@
 					@endif
 									
 				</div>
-				
 				<!-- END lo mas reciente -->
+
+				<!-- BEGIN conoce mas -->
+				<div class="shadow p-3 mb-4 bg-white rounded">
+					<h5 class="">Conoce más casos</h5>
+					@if($contentArticlesList->isNotEmpty())
+						@foreach($contentArticlesList as $oContentArticleList)
+							<div class="elemento">
+								<a href="{!! route('content-article', [$oContentArticle->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}" title="{!! $oContentArticleList->title !!}" class="w-100 mt-2"></a>
+								<h6 class="mt-3"><a href="{!! route('content-article', [$oContentArticle->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-muted">{!! $oContentArticleList->title !!}</a></h6>
+								<div class="row mt-1">
+								    <div class="col align-self-start text-muted">
+								      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}
+								    </div>
+							  	</div>
+							</div>
+							<hr class="border-success">
+						@endforeach
+					@endif
+									
+				</div>
+				<!-- END conoce mas -->
+
 				<div class="compartir shadow p-3 mb-4 bg-white rounded">
-					<h6 class="">Compartir</h6>
+					<h5 class="">Compartir</h5>
 					<div class="elemento mt-3">
 						<div class="addthis_inline_share_toolbox d-flex justify-content-center"></div>
 					</div>
 				</div>
 
 				<div class="compartir shadow p-3 mb-4 bg-white rounded">
-					<h6 class="">Ejes temáticos</h6>
+					<h5 class="">Ejes temáticos</h5>
 					<div class="elemento mt-3">
 						
 						<ul class="text-muted">

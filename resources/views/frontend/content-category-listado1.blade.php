@@ -30,7 +30,7 @@
 		<!-- BEGIN SECCION LATERAL -->
 			<div class="col-sm-3">
 				<!-- BEGIN lo mas reciente -->
-				<h5 class="celeste mt-3"><i class="fas fa-caret-square-right"></i> Temas o Tags</h5>
+				<h5 class="celeste mt-3"><i class="fas fa-caret-square-right"></i> Secciones</h5>
 				@if(is_array($tags))
 					@if(count($tags))
 						<div class="compartir shadow p-3 mb-4 bg-white rounded">
@@ -43,13 +43,13 @@
 					@endif
 				@endif
 				<!-- END lo mas reciente -->
-				<div class="compartir shadow p-3 mb-4 bg-white rounded">
+				<!--div class="compartir shadow p-3 mb-4 bg-white rounded">
 					<h6 class="celeste">Compartir</h6>
 					<div class="elemento mt-3">
 						<div class="addthis_inline_share_toolbox d-flex justify-content-center"></div>
 						<div class="mt-2 text-center celeste">Gasto Público</div>
 					</div>
-				</div>
+				</div-->
 				
 			</div>
 			<!-- END SECCION LATERAL -->
@@ -63,10 +63,10 @@
 							<div class="col-12 mb-3 border-bottom border-success pb-3">
 								<div class="row">
 									<div class="col-sm-5 d-flex align-items-center">
-										<img class="d-block w-100" src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}">
+										<a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" role="button" class="btn btn-success btn-sm float-right"><img class="d-block w-100" src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}"></a>
 									</div>
 									<div class="col-sm-7">							
-										<h3 class="subtitulo">{!! $oContentArticleList->title !!}</h3>
+										<h3 class="subtitulo"><a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" role="button" class="btn btn-success btn-sm float-right">{!! $oContentArticleList->title !!}</a></h3>
 										<span class="d-block text-right fz12 mb-3">{!! $oContentArticleList->tags ? $oContentArticleList->tags[0].' | ' : ''  !!}{!! TimeFormat::dateShortFormat($oContentArticleList->created_at) !!}</span>
 										<p class="text-justify text-muted">{!! $oContentArticleList->summary !!}</p>
 										<a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" role="button" class="btn btn-success btn-sm float-right">Ir a la publicación</a>
