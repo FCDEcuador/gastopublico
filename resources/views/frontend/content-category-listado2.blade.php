@@ -30,7 +30,7 @@
 		<!-- BEGIN SECCION LATERAL -->
 			<div class="col-sm-3">
 				<!-- BEGIN lo mas reciente -->
-				<h5 class="celeste mt-3"><i class="fas fa-caret-square-right"></i> Temas o Tags</h5>
+				<h5 class="celeste mt-3"><i class="fas fa-caret-square-right"></i> Secciones</h5>
 				@if(is_array($tags))
 					@if(count($tags))
 						<div class="compartir shadow p-3 mb-4 bg-white rounded">
@@ -43,13 +43,13 @@
 					@endif
 				@endif
 				<!-- END lo mas reciente -->
-				<div class="compartir shadow p-3 mb-4 bg-white rounded">
+				<!--div class="compartir shadow p-3 mb-4 bg-white rounded">
 					<h6 class="celeste">Compartir</h6>
 					<div class="elemento mt-3">
 						<div class="addthis_inline_share_toolbox d-flex justify-content-center"></div>
 						<div class="mt-2 text-center celeste">Gasto Público</div>
 					</div>
-				</div>
+				</div-->
 				
 			</div>
 			<!-- END SECCION LATERAL -->
@@ -63,7 +63,7 @@
 								@foreach($contentArticlesList as $oContentArticleList)
 									<div class="col-sm-4 col-6 mb-3">
 										<div class="card">
-										  <img class="card-img-top" src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}">
+										  <a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}"><img class="card-img-top" src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}"></a>
 										  <div class="card-body">
 										  	<h5 class="card-title fz16"><a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}"> {!! $oContentArticleList->title !!}</a></h5>
 										    <p class="card-text fz14">{!! $oContentArticleList->summary !!}</p>
