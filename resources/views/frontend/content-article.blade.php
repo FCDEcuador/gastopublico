@@ -40,11 +40,17 @@
 				<div class="shadow p-3 mb-5 bg-white rounded">
 					<div class="row mt-1">
 					    <div class="col align-self-start text-muted">
-					      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}
+					      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}<br />
+					      @if($oContentArticle->author)
+					      	<strong>Autor:</strong> {!! $oContentArticle->author !!}
+					      @endif
 					    </div>
 				  	</div>
 					<h1 class=" text-default ">{!! $oContentArticle->title !!}</h1>
 					<img src="{!! $oStorage->url($oContentArticle->main_multimedia) !!}" alt="{!! $oContentArticle->title !!}" title="{!! $oContentArticle->title !!}" class=" w-100">
+					@if($oContentArticle->multimedia_caption)
+						<span>{!! $oContentArticle->multimedia_caption !!}</span>
+					@endif
 					
 				  	<div class="content mt-3">
 					  	

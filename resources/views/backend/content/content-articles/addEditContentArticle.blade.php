@@ -229,6 +229,12 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="multimedia_caption"><strong>Pie de Foto</strong></label>
+                                {!! Form::textarea('multimedia_caption', null, ['id' => 'multimedia_caption', 'placeholder' => 'Ingrese el contenido del pie de foto', 'class' => 'form-control']) !!}
+                            </div>
+
+
+                            <div class="form-group">
                                 <label for="meta_description"><strong>Meta Description</strong></label>
                                 {!! Form::textarea('meta_description', null, ['id' => 'meta_description', 'placeholder' => 'Ingrese la descripcion del articulo para posicionamiento SEO', 'class' => 'form-control']) !!}
                             </div>

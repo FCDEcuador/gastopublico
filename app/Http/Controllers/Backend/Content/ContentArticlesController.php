@@ -195,6 +195,7 @@ class ContentArticlesController extends Controller
         $oContentArticle->title = $request->title;
         $oContentArticle->slug = $this->oSlugify->slugify($request->title);
         $oContentArticle->summary = $request->summary;
+        $oContentArticle->multimedia_caption = $request->multimedia_caption;
         $oContentArticle->content = $request->content;
         $oContentArticle->author = $request->author;
         $oContentArticle->author_email = $request->author_email;
@@ -340,6 +341,7 @@ class ContentArticlesController extends Controller
         $oContentArticle->title = $request->title;
         $oContentArticle->slug = $this->oSlugify->slugify($request->title);
         $oContentArticle->summary = $request->summary;
+        $oContentArticle->multimedia_caption = $request->multimedia_caption;
         $oContentArticle->content = $request->content;
         $oContentArticle->author = $request->author;
         $oContentArticle->author_email = $request->author_email;

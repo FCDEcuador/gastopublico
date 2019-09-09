@@ -39,6 +39,7 @@ class ContentArticle extends Model
         'source',
         'tags',
         'main_multimedia',
+        'multimedia_caption',
         'meta_description',
         'meta_keywords',
         'extra_headers',
