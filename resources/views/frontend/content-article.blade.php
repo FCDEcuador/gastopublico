@@ -39,17 +39,17 @@
 			<div class="col-sm-8">
 				<div class="shadow p-3 mb-5 bg-white rounded">
 					<div class="row mt-1">
-					    <div class="col align-self-start text-muted">
-					      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}<br />
+					    <div class="align-self-start text-muted fz12 mb-2">
+					      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}
 					      @if($oContentArticle->author)
-					      	<strong>Autor:</strong> {!! $oContentArticle->author !!}
+					      	| <strong>Autor:</strong> {!! $oContentArticle->author !!}
 					      @endif
 					    </div>
 				  	</div>
-					<h1 class=" text-default ">{!! $oContentArticle->title !!}</h1>
+					<h2 class=" text-default mt-2 mb-2">{!! $oContentArticle->title !!}</h2>
 					<img src="{!! $oStorage->url($oContentArticle->main_multimedia) !!}" alt="{!! $oContentArticle->title !!}" title="{!! $oContentArticle->title !!}" class=" w-100">
 					@if($oContentArticle->multimedia_caption)
-						<span>{!! $oContentArticle->multimedia_caption !!}</span>
+						<p class="fz12 mt-2 text-muted">{!! $oContentArticle->multimedia_caption !!}</p>
 					@endif
 					
 				  	<div class="content mt-3">

@@ -33,10 +33,10 @@
 					<div class="col-12 mb-3 border-bottom border-success pb-3">
 						<div class="row">
 							<div class="col-sm-5 d-flex align-items-center">
-								<a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" role="button" class="btn btn-success btn-sm float-right"><img class="d-block w-100" src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}"></a>
+								<a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" role="button"><img class="d-block w-100" src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}"></a>
 							</div>
 							<div class="col-sm-7">							
-								<h3 class="subtitulo"><a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" role="button" class="btn btn-success btn-sm float-right">{!! $oContentArticleList->title !!}</a></h3>
+								<h3 class="subtitulo"><a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" role="button">{!! $oContentArticleList->title !!}</a></h3>
 								<span class="d-block text-right fz12 mb-3">{!! $oContentArticleList->summary !!}</p>
 								<a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" role="button" class="btn btn-success btn-sm float-right">Ver más</a>
 							</div>
