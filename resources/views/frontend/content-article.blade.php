@@ -129,7 +129,9 @@
 									}
 								@endphp
 								@foreach($aTags as $tag)
-									<li><a href="{!! route('content-category-with-tag', [$oContentArticle->contentCategory->slug, 'tag', $tag]) !!}" class="text-muted">{!! $tag !!}</a></li>
+									@if(trim($tag))
+										<li><a href="{!! route('content-category-with-tag', [$oContentArticle->contentCategory->slug, 'tag', trim($tag)]) !!}" class="text-muted">{!! trim($tag) !!}</a></li>
+									@endif
 								@endforeach
 							@endif
 						</ul>
