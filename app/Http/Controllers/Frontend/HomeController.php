@@ -113,6 +113,37 @@ class HomeController extends Controller
 
         $aContentCategories = ContentCategory::has('contentArticles')->inRandomOrder()->get();
 
+        $aContentArticlesTags = ContentArticle::whereNotNull('tags')->get();
+
+        $aTags = [];
+        $numTags = 0;
+        if($aContentArticlesTags->isNotEmpty()){
+
+            foreach($aContentArticlesTags as $oContentArticle){
+                if(is_array($oContentArticle->tags)){
+                    foreach($oContentArticle->tags as $tag){
+                        $aTags[] = [
+                            'contentCategorySlug' => $oContentArticle->contentCategory->slug,
+                            'tag' => $tag,
+                        ];
+                        $numTags++;
+                        if($numTags >= 20){
+                            break;
+                        }
+                    }
+                }else{
+                    $aTags[] = [
+                        'contentCategorySlug' => $oContentArticle->contentCategory->slug,
+                        'tag' => $oContentArticle->tags,
+                    ];
+                    $numTags++;
+                    if($numTags >= 20){
+                        break;
+                    }
+                }
+            }
+        }
+
         $data = [
     		// Datos de configuracion general del sitio
             'title' => $title,
@@ -128,6 +159,7 @@ class HomeController extends Controller
             'secondaryArticles' => ContentArticle::available()->orderBy('publication_date', 'desc')->skip(3)->take(4)->get(),
             'listArticles' => ContentArticle::available()->orderBy('publication_date', 'desc')->skip(7)->take(3)->get(),
             'aIndicators' => Indicator::where('unity', 'USD')->orderBy('created_at', 'desc')->skip(0)->take(4)->get(),
+            'aTags' => $aTags,
             
     	];
 

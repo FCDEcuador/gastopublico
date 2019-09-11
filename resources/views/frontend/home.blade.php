@@ -191,7 +191,7 @@
 					<article class="shadow p-3 rounded nuevoB">
 						<div class="elemento">
 							<div class="div-relative" >
-	                            <a class="twitter-timeline" data-lang="es" data-height="600" data-width="320" data-link-color="#487d27" href="https://twitter.com/EsMiPlataEC?ref_src=twsrc%5Etfw">Tweets de EsMiPlataEC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	                            <a class="twitter-timeline" data-lang="es" data-height="600" data-link-color="#487d27" href="https://twitter.com/EsMiPlataEC?ref_src=twsrc%5Etfw">Tweets de EsMiPlataEC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	                        </div>
 						</div>				
 					</article>
@@ -213,13 +213,11 @@
 					</div>
 					<div class="col-sm-12">
 						<div class="lista-inline text-center flex">
-	                        
-	                            @if($aContentCategories->isNotEmpty())
-	                            	@foreach($aContentCategories as $oContentCategory)
-	                            		<a role="button" href="{{ route('content-category', [$oContentCategory->slug]) }}" name="1" class="tags-Busqueda btn-light pt-3 pb-3 pr-5 pl-5 mr-3 d-inline-block mb-3">{{ $oContentCategory->name }}</a>
-	                            	@endforeach
-	                            @endif
-	                        
+                            @if(is_array($aTags))
+								@foreach($aTags as $tag)
+									<a role="button" href="{!! route('content-category-with-tag', [$tag['contentCategorySlug'], 'tag', $tag['tag']]) !!}" name="1" class="tags-Busqueda btn-light pt-3 pb-3 pr-5 pl-5 mr-3 d-inline-block mb-3">{{ $tag['tag'] }}</a>
+								@endforeach
+							@endif
 	                    </ul>
 					</div>
 				</div>
