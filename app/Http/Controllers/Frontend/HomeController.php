@@ -116,28 +116,30 @@ class HomeController extends Controller
         $aContentArticlesTags = ContentArticle::whereNotNull('tags')->get();
 
         $aTags = [];
-        $numTags = 0;
         if($aContentArticlesTags->isNotEmpty()){
 
             foreach($aContentArticlesTags as $oContentArticle){
                 if(is_array($oContentArticle->tags)){
                     foreach($oContentArticle->tags as $tag){
-                        $aTags[] = [
-                            'contentCategorySlug' => $oContentArticle->contentCategory->slug,
-                            'tag' => $tag,
-                        ];
-                        $numTags++;
-                        if($numTags >= 20){
+                        if(trim($tag)){
+                            $aTags[] = [
+                                'contentCategorySlug' => $oContentArticle->contentCategory->slug,
+                                'tag' => $tag,
+                            ];    
+                        }
+                        if(count($aTags) >= 15){
                             break;
                         }
                     }
                 }else{
-                    $aTags[] = [
-                        'contentCategorySlug' => $oContentArticle->contentCategory->slug,
-                        'tag' => $oContentArticle->tags,
-                    ];
-                    $numTags++;
-                    if($numTags >= 20){
+                    $posComma = strpos($oContentArticle->tags, ',');
+                    if($posComma === false){
+                        $aTags[] = [
+                            'contentCategorySlug' => $oContentArticle->contentCategory->slug,
+                            'tag' => $oContentArticle->tags,
+                        ];
+                    }
+                    if(count($aTags) >= 15){
                         break;
                     }
                 }
