@@ -204,12 +204,8 @@ class ContentArticlesController extends Controller
         $oContentArticle->outstanding = $request->outstanding;
         $oContentArticle->main_category = 0;
         $oContentArticle->main_home = 0;
-        if($request->publciation_date){
-            $oContentArticle->publication_date = $request->publication_date;
-        }
-        if($request->release_date){
-            $oContentArticle->release_date = $request->release_date;
-        }
+        $oContentArticle->publication_date = $request->publication_date;
+        $oContentArticle->release_date = $request->release_date;
         $oContentArticle->meta_description = $request->meta_description;
         $oContentArticle->meta_keywords = $request->meta_keywords;
         $oContentArticle->extra_headers = $request->extra_headers;
