@@ -31,16 +31,14 @@
 			<div class="col-sm-3">
 				<!-- BEGIN lo mas reciente -->
 				<h5 class="celeste mt-3"><i class="fas fa-caret-square-right"></i> Secciones</h5>
-				@if(is_array($tags))
-					@if(count($tags))
-						<div class="compartir shadow p-3 mb-4 bg-white rounded">
-							<div class="elemento mt-3">
-								@foreach($tags as $key => $tag)
-									<a role="button" href="{!! route('content-category-with-tag', [$oContentCategory->slug, 'tag', $tag]) !!}" name="1" class="tags-Busqueda btn-light pt-2 pb-2 pr-3 pl-3 d-block mb-3">{!! $tag !!}</a>	
-								@endforeach
-							</div>
+				@if($aContentCategories->isNotEmpty())
+					<div class="compartir shadow p-3 mb-4 bg-white rounded">
+						<div class="elemento mt-3">
+							@foreach($aContentCategories as $oContentCategory)
+								<a role="button" href="{{ route('content-category', [$oContentCategory->slug]) }}" name="1" class="tags-Busqueda btn-light pt-3 pb-3 pr-5 pl-5 mr-3 d-inline-block mb-3">{{ $oContentCategory->name }}</a>
+							@endforeach
 						</div>
-					@endif
+					</div>
 				@endif
 				<!-- END lo mas reciente -->
 				<!--div class="compartir shadow p-3 mb-4 bg-white rounded">

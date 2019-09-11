@@ -72,11 +72,11 @@
 					@if($contentArticlesListRecent->isNotEmpty())
 						@foreach($contentArticlesListRecent as $oContentArticleRecent)
 							<div class="elemento">
-								<a href="{!! route('content-article', [$oContentArticle->contentCategory->slug, $oContentArticleRecent->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oContentArticleRecent->main_multimedia) !!}" alt="{!! $oContentArticleRecent->title !!}" title="{!! $oContentArticleRecent->title !!}" class="w-100 mt-2"></a>
-								<h6 class="mt-3"><a href="{!! route('content-article', [$oContentArticle->contentCategory->slug, $oContentArticleRecent->slug]) !!}" class="text-muted">{!! $oContentArticleRecent->title !!}</a></h6>
+								<a href="{!! route('content-article', [$oContentArticleRecent->contentCategory->slug, $oContentArticleRecent->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oContentArticleRecent->main_multimedia) !!}" alt="{!! $oContentArticleRecent->title !!}" title="{!! $oContentArticleRecent->title !!}" class="w-100 mt-2"></a>
+								<h6 class="mt-3"><a href="{!! route('content-article', [$oContentArticleRecent->contentCategory->slug, $oContentArticleRecent->slug]) !!}" class="text-muted">{!! $oContentArticleRecent->title !!}</a></h6>
 								<div class="row mt-1">
 								    <div class="col align-self-start text-muted">
-								      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}
+								      {!! TimeFormat::dateShortFormat($oContentArticleRecent->created_at) !!}
 								    </div>
 							  	</div>
 							</div>
@@ -93,11 +93,11 @@
 					@if($contentArticlesList->isNotEmpty())
 						@foreach($contentArticlesList as $oContentArticleList)
 							<div class="elemento">
-								<a href="{!! route('content-article', [$oContentArticle->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}" title="{!! $oContentArticleList->title !!}" class="w-100 mt-2"></a>
-								<h6 class="mt-3"><a href="{!! route('content-article', [$oContentArticle->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-muted">{!! $oContentArticleList->title !!}</a></h6>
+								<a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oContentArticleList->main_multimedia) !!}" alt="{!! $oContentArticleList->title !!}" title="{!! $oContentArticleList->title !!}" class="w-100 mt-2"></a>
+								<h6 class="mt-3"><a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-muted">{!! $oContentArticleList->title !!}</a></h6>
 								<div class="row mt-1">
 								    <div class="col align-self-start text-muted">
-								      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}
+								      {!! TimeFormat::dateShortFormat($oContentArticleList->created_at) !!}
 								    </div>
 							  	</div>
 							</div>
@@ -120,9 +120,16 @@
 					<div class="elemento mt-3">
 						
 						<ul class="text-muted">
-							@if($contentCategoriesList->isNotEmpty())
-								@foreach($contentCategoriesList as $oContentCategoryList)
-									<li><a href="{!! route('content-category', [$oContentCategoryList->slug]) !!}" class="text-muted">{!! $oContentCategoryList->name !!}</a></li>
+							@if($oContentArticle->tags)
+								@php
+									if( ! is_array($oContentArticle->tags)){
+										$aTags = explode(',', $oContentArticle->tags);
+									}else{
+										$aTags = $oContentArticle->tags;
+									}
+								@endphp
+								@foreach($aTags as $tag)
+									<li><a href="{!! route('content-category-with-tag', [$oContentArticle->contentCategory->slug, 'tag', $tag]) !!}" class="text-muted">{!! $tag !!}</a></li>
 								@endforeach
 							@endif
 						</ul>

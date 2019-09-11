@@ -134,10 +134,12 @@ class ContentCategoriesController extends Controller
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
         if($sTag){
-            $contentArticlesList = $oContentCategory->contentArticles()->available()->where('tags', 'like', '%'.$sTag.'%')->orderBy('publication_date', 'desc')->paginate(10);
+            $contentArticlesList = $oContentCategory->contentArticles()->available()->where('tags', 'like', '%'.trim($sTag).'%')->orderBy('publication_date', 'desc')->paginate(10);
         }else{
             $contentArticlesList = $oContentCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->paginate(10);
         }
+
+        $aContentCategories = ContentCategory::has('contentArticles')->inRandomOrder()->get();
         
 
         $data = [
@@ -153,6 +155,7 @@ class ContentCategoriesController extends Controller
             'oContentCategory' => $oContentCategory,
             'contentArticlesList' => $contentArticlesList,
             'tags' => $oContentCategory->tags,
+            'aContentCategories' => $aContentCategories,
     	];
 
     	
