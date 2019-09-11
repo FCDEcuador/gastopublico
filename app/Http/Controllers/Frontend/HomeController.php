@@ -113,19 +113,23 @@ class HomeController extends Controller
 
         $aContentCategories = ContentCategory::has('contentArticles')->inRandomOrder()->get();
 
-        $aContentArticlesTags = ContentArticle::whereNotNull('tags')->get();
+        $aContentArticlesTags = ContentArticle::whereNotNull('tags')->inRandomOrder()->get();
 
         $aTags = [];
+        $auxTags = [];
         if($aContentArticlesTags->isNotEmpty()){
 
             foreach($aContentArticlesTags as $oContentArticle){
                 if(is_array($oContentArticle->tags)){
                     foreach($oContentArticle->tags as $tag){
                         if(trim($tag)){
-                            $aTags[] = [
-                                'contentCategorySlug' => $oContentArticle->contentCategory->slug,
-                                'tag' => $tag,
-                            ];    
+                            if(! in_array($tag, $auxTags)){
+                                $aTags[] = [
+                                    'contentCategorySlug' => $oContentArticle->contentCategory->slug,
+                                    'tag' => $tag,
+                                ];
+                                $auxTags[] = $tag;
+                            }
                         }
                         if(count($aTags) >= 15){
                             break;
@@ -134,14 +138,20 @@ class HomeController extends Controller
                 }else{
                     $posComma = strpos($oContentArticle->tags, ',');
                     if($posComma === false){
-                        $aTags[] = [
-                            'contentCategorySlug' => $oContentArticle->contentCategory->slug,
-                            'tag' => $oContentArticle->tags,
-                        ];
+                        if(! in_array($oContentArticle->tags, $auxTags)){
+                            $aTags[] = [
+                                'contentCategorySlug' => $oContentArticle->contentCategory->slug,
+                                'tag' => $oContentArticle->tags,
+                            ];
+                            $auxTags[] = $tag;
+                        }
                     }
                     if(count($aTags) >= 15){
                         break;
                     }
+                }
+                if(count($aTags) >= 15){
+                    break;
                 }
             }
         }
