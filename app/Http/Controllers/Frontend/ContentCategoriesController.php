@@ -133,7 +133,7 @@ class ContentCategoriesController extends Controller
 
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
-        if($sTag){
+        if(trim($sTag)){
             $contentArticlesList = $oContentCategory->contentArticles()->available()->where('tags', 'like', '%'.trim($sTag).'%')->orderBy('publication_date', 'desc')->paginate(10);
         }else{
             $contentArticlesList = $oContentCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->paginate(10);
@@ -246,7 +246,7 @@ class ContentCategoriesController extends Controller
         }
         
         $aMetas = MetaTag::all();
-        $title = $oContentCategory->name;
+        $title = $oContentArticle->title;
         SEO::setTitle($title);
 
         if($aMetas->isNotEmpty()){
@@ -271,10 +271,12 @@ class ContentCategoriesController extends Controller
         	SEOMeta::addKeyword(explode(',', $oContentCategory->meta_keywords));
         }
 
-        // SEO::opengraph()->setUrl('http://current.url.com');
-        // SEO::setCanonical('https://codecasts.com.br/lesson');
-        //  SEO::opengraph()->addProperty('type', 'articles');
-        // SEO::twitter()->setSite('@LuizVinicius73');
+        OpenGraph::setDescription($oContentArticle->summary);
+        OpenGraph::setTitle($oContentArticle->title);
+        OpenGraph::setUrl(route('content-article', [$oContentCategory->slug, $oContentArticle->slug]));
+        OpenGraph::addProperty('type', 'article');
+        OpenGraph::addProperty('locale', 'es');
+        OpenGraph::addImage($this->oStorage->url($oContentArticle->main_multimedia));
 
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
