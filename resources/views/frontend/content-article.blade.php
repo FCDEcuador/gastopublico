@@ -115,12 +115,11 @@
 					</div>
 				</div>
 
-				<div class="compartir shadow p-3 mb-4 bg-white rounded">
-					<h5 class="">Lista de Tags</h5>
-					<div class="elemento mt-3">
-						
-						<ul class="text-muted">
-							@if($oContentArticle->tags)
+				@if($oContentArticle->tags)
+					<div class="compartir shadow p-3 mb-4 bg-white rounded">
+						<h5 class="">Lista de Tags</h5>
+						<div class="elemento mt-3">
+							<ul class="text-muted">
 								@php
 									if( ! is_array($oContentArticle->tags)){
 										$aTags = explode(',', $oContentArticle->tags);
@@ -133,10 +132,10 @@
 										<li><a href="{!! route('content-category-with-tag', [$oContentArticle->contentCategory->slug, 'tag', trim($tag)]) !!}" class="text-muted">{!! trim($tag) !!}</a></li>
 									@endif
 								@endforeach
-							@endif
-						</ul>
+							</ul>
+						</div>
 					</div>
-				</div>
+				@endif
 				
 			</div>
 		<!-- END SECCION LATERAL -->
