@@ -115,7 +115,7 @@
 					</div>
 				</div>
 
-				@if($oContentArticle->tags)
+				@if(trim($oContentArticle->tags))
 					<div class="compartir shadow p-3 mb-4 bg-white rounded">
 						<h5 class="">Lista de Tags</h5>
 						<div class="elemento mt-3">
