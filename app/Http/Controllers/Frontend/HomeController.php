@@ -143,7 +143,7 @@ class HomeController extends Controller
                                 'contentCategorySlug' => $oContentArticle->contentCategory->slug,
                                 'tag' => $oContentArticle->tags,
                             ];
-                            $auxTags[] = $tag;
+                            $auxTags[] = $oContentArticle->tags;
                         }
                     }
                     if(count($aTags) >= 15){
