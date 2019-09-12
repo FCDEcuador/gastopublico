@@ -213,11 +213,7 @@
 					</div>
 					<div class="col-sm-12">
 						<div class="lista-inline text-center flex">
-                            @if(is_array($aTags))
-								@foreach($aTags as $tag)
-									<a role="button" href="{!! route('content-category-with-tag', [$tag['contentCategorySlug'], 'tag', $tag['tag']]) !!}" name="1" class="tags-Busqueda btn-light pt-3 pb-3 pr-5 pl-5 mr-3 d-inline-block mb-3">{{ $tag['tag'] }}</a>
-								@endforeach
-							@endif
+                            
 	                    </ul>
 					</div>
 				</div>
