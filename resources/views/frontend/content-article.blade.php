@@ -40,7 +40,7 @@
 				<div class="shadow p-3 mb-5 bg-white rounded">
 					<div class="row mt-1">
 					    <div class="align-self-start text-muted fz12 mb-2">
-					      {!! TimeFormat::dateShortFormat($oContentArticle->created_at) !!}
+					      {!! TimeFormat::dateShortFormat($oContentArticle->publication_date ? $oContentArticle->publication_date : $oContentArticle->created_at) !!}
 					      @if($oContentArticle->author)
 					      	| <strong>Autor:</strong> {!! $oContentArticle->author !!}
 					      @endif
@@ -76,7 +76,7 @@
 								<h6 class="mt-3"><a href="{!! route('content-article', [$oContentArticleRecent->contentCategory->slug, $oContentArticleRecent->slug]) !!}" class="text-muted">{!! $oContentArticleRecent->title !!}</a></h6>
 								<div class="row mt-1">
 								    <div class="col align-self-start text-muted">
-								      {!! TimeFormat::dateShortFormat($oContentArticleRecent->created_at) !!}
+								      {!! TimeFormat::dateShortFormat($oContentArticleRecent->publication_date ? $oContentArticleRecent->publication_date : $oContentArticleRecent->created_at) !!}
 								    </div>
 							  	</div>
 							</div>
@@ -97,7 +97,7 @@
 								<h6 class="mt-3"><a href="{!! route('content-article', [$oContentArticleList->contentCategory->slug, $oContentArticleList->slug]) !!}" class="text-muted">{!! $oContentArticleList->title !!}</a></h6>
 								<div class="row mt-1">
 								    <div class="col align-self-start text-muted">
-								      {!! TimeFormat::dateShortFormat($oContentArticleList->created_at) !!}
+								      {!! TimeFormat::dateShortFormat($oContentArticleList->publication_date ? $oContentArticleList->publication_date : $oContentArticleList->created_at) !!}
 								    </div>
 							  	</div>
 							</div>
