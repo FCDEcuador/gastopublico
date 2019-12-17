@@ -122,13 +122,13 @@ class HomeController extends Controller
             foreach($aContentArticlesTags as $oContentArticle){
                 if(is_array($oContentArticle->tags)){
                     foreach($oContentArticle->tags as $tag){
-                        if(trim($tag)){
+                        if($tag){
                             if(! in_array($tag, $auxTags)){
                                 $aTags[] = [
                                     'contentCategorySlug' => $oContentArticle->contentCategory->slug,
-                                    'tag' => $tag,
+                                    'tag' => trim($tag),
                                 ];
-                                $auxTags[] = $tag;
+                                $auxTags[] = trim($tag);
                             }
                         }
                         if(count($aTags) >= 15){
@@ -136,12 +136,12 @@ class HomeController extends Controller
                         }
                     }
                 }else{
-                    $posComma = strpos($oContentArticle->tags, ',');
-                    if($posComma === false){
-                        if(! in_array($oContentArticle->tags, $auxTags)){
+                    $aContentTags = explode(',', $oContentArticle->tags);
+                    foreach($aContentTags as $tag){
+                        if(! in_array($tag, $auxTags)){
                             $aTags[] = [
                                 'contentCategorySlug' => $oContentArticle->contentCategory->slug,
-                                'tag' => $oContentArticle->tags,
+                                'tag' => $tag,
                             ];
                             $auxTags[] = $tag;
                         }

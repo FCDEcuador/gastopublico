@@ -77,7 +77,7 @@
 											<a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted" class="public-sidebar">{{ $oSecondaryArticle->summary }}</a>
 										</h6>
 										<div class="text-right text-muted fz12 mt-1">
-										      {!! TimeFormat::dateShortFormat($oSecondaryArticle->created_at) !!}
+										      {!! TimeFormat::dateShortFormat($oSecondaryArticle->publication_date ? $oSecondaryArticle->publication_date : $oSecondaryArticle->created_at) !!}
 									    </div>
 									</div>
 								</div>
@@ -142,7 +142,7 @@
 								    	<div class="row">
 								    		<div class="col-sm-12">
 								    			<a href="{!! route('content-article', [$oListArticle->contentCategory->slug, $oListArticle->slug]) !!}" class="subtitulo"><img class="d-block img-fluid mx-auto img-corrupcion" src="{!! $oStorage->url($oListArticle->main_multimedia) !!}" alt="{{ $oListArticle->title }}"></a>
-								    			<div class="text-right text-muted fz12 mt-3">{!! TimeFormat::dateShortFormat($oListArticle->created_at) !!}</div>
+								    			<div class="text-right text-muted fz12 mt-3">{!! TimeFormat::dateShortFormat($oListArticle->publication_date ? $oListArticle->publication_date : $oListArticle->created_at) !!}</div>
 								    			<h6 class="mt-3"><a href="{!! route('content-article', [$oListArticle->contentCategory->slug, $oListArticle->slug]) !!}" class="subtitulo">{{ $oListArticle->title }}</a></h6>
 								    			<div class="pb-3 text-justify text-muted">{{ $oListArticle->summary }}</div>
 								    		</div>
