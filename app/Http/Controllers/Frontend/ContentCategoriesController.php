@@ -133,7 +133,7 @@ class ContentCategoriesController extends Controller
 
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
-        if(trim($sTag)){
+        if(strtolower($isTag) == 'tag'){
             $contentArticlesList = $oContentCategory->contentArticles()->available()->where('tags', 'like', '%'.trim($sTag).'%')->orderBy('publication_date', 'desc')->paginate(10);
         }else{
             $contentArticlesList = $oContentCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->paginate(10);
