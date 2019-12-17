@@ -104,7 +104,7 @@
 							@foreach($aIndicators as $oIndicator)
 								<div class="row">
 			                        <div class="col-12 align-self-center">
-			                            <h5 class="text-center sinmargen">
+			                            <h5 class="text-center sinmargen nborde">
 			                            	{{ $oIndicator->title }}
 			                        	</h5>
 			                        </div>
