@@ -26,7 +26,7 @@
                 <div class="col-md-4  align-self-center">
                     <p class="text-center">
                         <i class="fab fa-creative-commons text-info fz32 mb-3"></i><br>
-                        Esta obra de Observatorio Fiscal está bajo una <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Licencia Creative Commons Atribución 4.0 Internacional.</a><br>
+                        Esta obra de Observatorio de Gasto Público está bajo una <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Licencia Creative Commons Atribución 4.0 Internacional.</a><br>
                         <br>
                     </p>
                 </div>
