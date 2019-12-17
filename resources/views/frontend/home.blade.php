@@ -174,14 +174,10 @@
 			      	<!--  END CAROUSEL -->
 			      </div>
 
-			      <article class="shadow p-3 mt-3 rounded naranjoB">
+			      <article class="shadow p-3 mt-3 rounded">
 						<div class="elemento">
-							<div class="div-relative">
-	                            <h5 class="text-center blanco"><a href="http://www.ciudadaniaydesarrollo.org/" class="text-white">Fundación de Ciudadania y Desarrollo</a></h5>
-	                            <p class="text-center mb-0">Conoce nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
-	                            
-	                        </div>
-						</div>				
+							Un aporte de: <img src="https://www.gastopublico.org/public/storage/photos/fcd.png" width="207px">
+						</div>	
 					</article>
 
 
