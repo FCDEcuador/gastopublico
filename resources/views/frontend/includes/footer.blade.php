@@ -34,22 +34,19 @@
         </div>
     </div>
 
-	
-	<div class="row">
-        <div class="col-md-12">
-            <div class="text-center">
-                <img src="https://www.gastopublico.org/public/storage/photos/fcd.png"  width="207px" />
-            </div>
-            <!--ul class="nav men-top justify-content-center">
+    
+    <div class="row">
+        <!--div class="col-md-12">
+            <ul class="nav men-top justify-content-center">
                 <li class="nav-item"><a class="nav-link" href="#">Contenido Copyright</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Datasets</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
-            </ul-->
+            </ul>
+        </div-->
+        <div class="col-12 text-center">
+            <p class="text-secondary mt-3">Derechos Reservados © 2018 - Observatorio del Gasto Público Ecuador</p>
         </div>
-		<div class="col-12 text-center">
-			<p class="text-secondary mt-3">Derechos Reservados © 2019 - Observatorio del Gasto Público Ecuador</p>
-		</div>
-	</div>
+    </div>
 </div>
 
 <!-- END FOOTER -->
