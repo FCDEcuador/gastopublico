@@ -133,10 +133,13 @@ class ContentCategoriesController extends Controller
 
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
+        $contentArticlesList = $oContentCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->paginate(10);
+
         if(strtolower($isTag) == 'tag'){
+            echo "1";
             $contentArticlesList = $oContentCategory->contentArticles()->available()->where('tags', 'like', '%'.trim($sTag).'%')->orderBy('publication_date', 'desc')->paginate(10);
         }else{
-            $contentArticlesList = $oContentCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->paginate(10);
+            echo "0";
         }
 
         $aContentCategories = ContentCategory::has('contentArticles')->inRandomOrder()->get();
