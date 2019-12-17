@@ -554,7 +554,13 @@ h6{
     font-weight: 300!important;
 }
 .public-sidebar{
-	height: 80px;
+	height: 66px;
 	overflow: hidden;
 	display: block;
+}
+.public-sidebar:before{
+	content: ' ...';
+}
+.public-sidebar:after{
+	content: ' ...';	
 }
