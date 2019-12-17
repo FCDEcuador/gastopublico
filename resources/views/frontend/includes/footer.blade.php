@@ -34,19 +34,19 @@
         </div>
     </div>
 
-	
-	<div class="row">
-        <div class="col-md-12">
+    
+    <div class="row">
+        <!--div class="col-md-12">
             <ul class="nav men-top justify-content-center">
                 <li class="nav-item"><a class="nav-link" href="#">Contenido Copyright</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Datasets</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
             </ul>
+        </div-->
+        <div class="col-12 text-center">
+            <p class="text-secondary mt-3">Derechos Reservados © 2018 - Observatorio del Gasto Público Ecuador</p>
         </div>
-		<div class="col-12 text-center">
-			<p class="text-secondary mt-3">Derechos Reservados © 2018 - Observatorio del Gasto Público Ecuador</p>
-		</div>
-	</div>
+    </div>
 </div>
 
 <!-- END FOOTER -->

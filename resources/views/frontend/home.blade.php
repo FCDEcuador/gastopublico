@@ -73,7 +73,9 @@
 										<a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oSecondaryArticle->main_multimedia) !!}" alt="{{ $oSecondaryArticle->title }}" title="{{ $oSecondaryArticle->title }}" class="w-100 mt-2"></a>
 									</div>
 									<div class="col-sm-7">
-										<h6 class="mb-0 ml-sm-3 mb-0 mt-3 mt-sm-0"><a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted">{{ $oSecondaryArticle->summary }}</a></h6>
+										<h6 class="mb-0 ml-sm-3 mb-0 mt-3 mt-sm-0">
+											<a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted public-sidebar" >{{ $oSecondaryArticle->summary }}</a>
+										</h6>
 										<div class="text-right text-muted fz12 mt-1">
 										      {!! TimeFormat::dateShortFormat($oSecondaryArticle->publication_date ? $oSecondaryArticle->publication_date : $oSecondaryArticle->created_at) !!}
 									    </div>
@@ -102,7 +104,7 @@
 							@foreach($aIndicators as $oIndicator)
 								<div class="row">
 			                        <div class="col-12 align-self-center">
-			                            <h5 class="text-center sinmargen">
+			                            <h5 class="text-center sinmargen nborde">
 			                            	{{ $oIndicator->title }}
 			                        	</h5>
 			                        </div>
@@ -172,14 +174,10 @@
 			      	<!--  END CAROUSEL -->
 			      </div>
 
-			      <article class="shadow p-3 mt-3 rounded naranjoB">
+			      <article class="shadow p-3 mt-3 rounded">
 						<div class="elemento">
-							<div class="div-relative">
-	                            <h5 class="text-center blanco"><a href="http://www.ciudadaniaydesarrollo.org/" class="text-white">Fundación de Ciudadania y Desarrollo</a></h5>
-	                            <p class="text-center mb-0">Conoce nuestras publicaciones y participaciones para mejorar la rendición de cuentas públicas y la calidad del gasto en nuestro país.</p>
-	                            
-	                        </div>
-						</div>				
+							Un aporte de: <img src="https://www.gastopublico.org/public/storage/photos/fcd.png" width="207px">
+						</div>	
 					</article>
 
 

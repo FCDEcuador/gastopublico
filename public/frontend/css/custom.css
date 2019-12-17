@@ -553,4 +553,14 @@ h6{
 	font-size: 14px!important;
     font-weight: 300!important;
 }
-    
+.public-sidebar{
+	height: 66px;
+	overflow: hidden;
+	display: block;
+}
+.nborde{
+	background: #eef3f0;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
