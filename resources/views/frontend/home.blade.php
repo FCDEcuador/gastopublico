@@ -176,7 +176,7 @@
 
 			      <article class="shadow p-3 mt-3 rounded">
 						<div class="elemento">
-							Un aporte de: <img src="https://www.gastopublico.org/public/storage/photos/fcd.png" width="207px">
+							Un aporte de: <a href="https://www.ciudadaniaydesarrollo.org/" target="_blank"><img src="https://www.gastopublico.org/public/storage/photos/fcd.png" width="207px"></a>
 						</div>	
 					</article>
 
