@@ -136,10 +136,7 @@ class ContentCategoriesController extends Controller
         $contentArticlesList = $oContentCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->paginate(10);
 
         if(trim($sTag)){
-            echo "1";
             $contentArticlesList = $oContentCategory->contentArticles()->available()->where('tags', 'like', '%'.trim($sTag).'%')->orderBy('publication_date', 'desc')->paginate(10);
-        }else{
-            echo "0";
         }
 
         $aContentCategories = ContentCategory::has('contentArticles')->inRandomOrder()->get();
