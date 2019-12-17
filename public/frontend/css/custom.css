@@ -558,9 +558,3 @@ h6{
 	overflow: hidden;
 	display: block;
 }
-.public-sidebar:before{
-	content: ' ...';
-}
-.public-sidebar:after{
-	content: ' ...';	
-}
