@@ -73,7 +73,9 @@
 										<a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted"><img src="{!! $oStorage->url($oSecondaryArticle->main_multimedia) !!}" alt="{{ $oSecondaryArticle->title }}" title="{{ $oSecondaryArticle->title }}" class="w-100 mt-2"></a>
 									</div>
 									<div class="col-sm-7">
-										<h6 class="mb-0 ml-sm-3 mb-0 mt-3 mt-sm-0"><a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted">{{ $oSecondaryArticle->summary }}</a></h6>
+										<h6 class="mb-0 ml-sm-3 mb-0 mt-3 mt-sm-0">
+											<a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted" class="public-sidebar">{{ $oSecondaryArticle->summary }}</a>
+										</h6>
 										<div class="text-right text-muted fz12 mt-1">
 										      {!! TimeFormat::dateShortFormat($oSecondaryArticle->created_at) !!}
 									    </div>

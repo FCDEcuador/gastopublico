@@ -553,4 +553,8 @@ h6{
 	font-size: 14px!important;
     font-weight: 300!important;
 }
-    
+.public-sidebar{
+	height: 80px;
+	overflow: hidden;
+	display: block;
+}
