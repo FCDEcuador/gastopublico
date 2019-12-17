@@ -83,7 +83,7 @@ class ContentCategoriesController extends Controller
      * @method GET / POST
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, $sContentCategorySlug = '', $isTag = '', $sTag = ''){
+    public function index(Request $request, $sContentCategorySlug = '', $sTag = ''){
 
     	if( ! $sContentCategorySlug){
             return redirect()->route('home');
@@ -135,7 +135,7 @@ class ContentCategoriesController extends Controller
 
         $contentArticlesList = $oContentCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->paginate(10);
 
-        if(strtolower($isTag) == 'tag'){
+        if(trim($sTag)){
             echo "1";
             $contentArticlesList = $oContentCategory->contentArticles()->available()->where('tags', 'like', '%'.trim($sTag).'%')->orderBy('publication_date', 'desc')->paginate(10);
         }else{
