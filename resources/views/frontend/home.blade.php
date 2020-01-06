@@ -28,7 +28,7 @@
 							    @foreach($mainArticles as $oMainArticle)
 								    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
 								    	<div class="row no-gutters">
-								    		<a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}"><img class="d-block img-fluid mx-auto img-corrupcion" src="{!! $oStorage->url($oMainArticle->main_multimedia) !!}" alt="{{ $oMainArticle->title }}"></a>
+								    		<a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}"><img class="d-block img-fluid mx-auto img-corrupcion hackwidth" src="{!! $oStorage->url($oMainArticle->main_multimedia) !!}" alt="{{ $oMainArticle->title }}"></a>
 								    		<div class="col-sm-12 pt-3">
 								    			<h5><a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}">{{ $oMainArticle->title }}</a></h5>
 								    			<div class="pt-1  text-justify text-muted">{{ $oMainArticle->summary }}</div>
