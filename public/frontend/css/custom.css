@@ -554,9 +554,7 @@ h6{
     font-weight: 300!important;
 }
 .public-sidebar{
-	height: 66px;
-	overflow: hidden;
-	display: block;
+	
 }
 .nborde{
 	background: #eef3f0;
