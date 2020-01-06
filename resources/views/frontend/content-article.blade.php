@@ -57,6 +57,7 @@
 						<div class="text-justify text-muted">
 							<p><i><b>{!! $oContentArticle->summary !!}</b></i></p>
 							{!! $oContentArticle->content !!}
+							<div style="clear:both"></div>
 						</div>
 					</div>
 				</div>
