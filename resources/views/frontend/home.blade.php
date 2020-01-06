@@ -100,7 +100,7 @@
 					<!-- BEGIN SECCION LATERAL -->
 					
 					<div class="shadow p-3 mb-4 bg-white rounded">
-						<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Datos e indicadores  <small>ver más</small></h1>
+						<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Datos e indicadores  <small><a href="{{ url('/indicadores') }}">ver más</a></small></h1>
 						@if($aIndicators->isNotEmpty())
 							@foreach($aIndicators as $oIndicator)
 								<div class="row">
