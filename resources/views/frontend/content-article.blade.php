@@ -38,7 +38,7 @@
 		<!-- BEGIN SECCION CONTENIDDO -->
 			<div class="col-sm-8">
 				<div class="shadow p-3 mb-5 bg-white rounded">
-					<div class="row mt-1">
+					<div class="mt-1">
 					    <div class="align-self-start text-muted fz12 mb-2">
 					      {!! TimeFormat::dateShortFormat($oContentArticle->publication_date ? $oContentArticle->publication_date : $oContentArticle->created_at) !!}
 					      @if($oContentArticle->author)
