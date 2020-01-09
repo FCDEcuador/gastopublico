@@ -28,7 +28,7 @@
 							    @foreach($mainArticles as $oMainArticle)
 								    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
 								    	<div class="row no-gutters">
-								    		<a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}"><img class="d-block img-fluid mx-auto img-corrupcion" src="{!! $oStorage->url($oMainArticle->main_multimedia) !!}" alt="{{ $oMainArticle->title }}"></a>
+								    		<a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}"><img class="d-block img-fluid mx-auto img-corrupcion hackwidth" src="{!! $oStorage->url($oMainArticle->main_multimedia) !!}" alt="{{ $oMainArticle->title }}"></a>
 								    		<div class="col-sm-12 pt-3">
 								    			<h5><a href="{!! route('content-article', [$oMainArticle->contentCategory->slug, $oMainArticle->slug]) !!}">{{ $oMainArticle->title }}</a></h5>
 								    			<div class="pt-1  text-justify text-muted">{{ $oMainArticle->summary }}</div>
@@ -74,7 +74,8 @@
 									</div>
 									<div class="col-sm-7">
 										<h6 class="mb-0 ml-sm-3 mb-0 mt-3 mt-sm-0">
-											<a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted public-sidebar" >{{ $oSecondaryArticle->summary }}</a>
+											<a href="{!! route('content-article', [$oSecondaryArticle->contentCategory->slug, $oSecondaryArticle->slug]) !!}" class="text-muted public-sidebar" >{{ str_limit($oSecondaryArticle->summary, $limit = 100, $end = '...') }}
+											</a>
 										</h6>
 										<div class="text-right text-muted fz12 mt-1">
 										      {!! TimeFormat::dateShortFormat($oSecondaryArticle->publication_date ? $oSecondaryArticle->publication_date : $oSecondaryArticle->created_at) !!}
@@ -99,7 +100,7 @@
 					<!-- BEGIN SECCION LATERAL -->
 					
 					<div class="shadow p-3 mb-4 bg-white rounded">
-						<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Datos e indicadores  <small>ver más</small></h1>
+						<h1 class="titulo border-bottom border-info text-default mt-3 mt-sm-0 text-sm-left mb-3">Datos e indicadores  <small><a href="{{ url('/indicadores') }}">ver más</a></small></h1>
 						@if($aIndicators->isNotEmpty())
 							@foreach($aIndicators as $oIndicator)
 								<div class="row">

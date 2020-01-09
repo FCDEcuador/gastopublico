@@ -554,10 +554,19 @@ h6{
     font-weight: 300!important;
 }
 .public-sidebar{
-	height: 66px;
-	overflow: hidden;
-	display: block;
+	
 }
+ @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+  /* IE10+ specific styles go here */  
+  .hackwidth { width: 100% } /* IE10 */
+     *::-ms-backdrop, .hackwidth { width: 100% } /* IE11 */
+}
+@media all and (-ms-high-contrast:none)
+     {
+     .hackwidth { width: 100% } /* IE10 */
+     *::-ms-backdrop, .hackwidth { width: 100% } /* IE11 */
+     }
+
 .nborde{
 	background: #eef3f0;
     padding: 10px;
