@@ -115,6 +115,8 @@ class HomeController extends Controller
 
         $aContentArticlesTags = ContentArticle::whereNotNull('tags')->inRandomOrder()->get();
 
+        $oPublicacionesCategory = ContentCategory::bySlug('informes-del-observatorio');
+
         $aTags = [];
         $auxTags = [];
         if($aContentArticlesTags->isNotEmpty()){
@@ -168,8 +170,8 @@ class HomeController extends Controller
             // Datos para el contenido de la pagina
             'aContentCategories' => $aContentCategories,
             'mainArticles' => ContentArticle::available()->orderBy('publication_date', 'desc')->skip(0)->take(3)->get(),
-            'secondaryArticles' => ContentArticle::available()->orderBy('publication_date', 'desc')->skip(3)->take(4)->get(),
-            'listArticles' => ContentArticle::available()->orderBy('publication_date', 'desc')->skip(7)->take(3)->get(),
+            'secondaryArticles' => is_object($oPublicacionesCategory) ? $oPublicacionesCategory->contentArticles()->available()->orderBy('publication_date', 'desc')->take(4)->get() : ContentArticle::available()->orderBy('publication_date', 'desc')->skip(3)->take(4)->get(),
+            'listArticles' => is_object($oPublicacionesCategory) ? ContentArticle::available()->orderBy('publication_date', 'desc')->skip(3)->take(3)->get() : ContentArticle::available()->orderBy('publication_date', 'desc')->skip(7)->take(3)->get(),
             'aIndicators' => Indicator::where('unity', 'USD')->orderBy('created_at', 'desc')->skip(0)->take(4)->get(),
             'aTags' => $aTags,
             
