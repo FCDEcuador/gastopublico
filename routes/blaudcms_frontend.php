@@ -25,6 +25,14 @@ Route::post('/contactenos','Frontend\StaticPagesController@contactSend')->name('
 
 Route::get('/indicadores', 'Frontend\IndicatorsController@index')->name('indicators');
 
+Route::group(array('prefix' => '/sitemap'), function(){
+	
+	Route::get('/lista', 'Frontend\SitemapsController@index')->name('sitemap.list');
+	Route::get('/home', 'Frontend\SitemapsController@home')->name('sitemap.index');
+	Route::get('/{contentCategorySlug?}', 'Frontend\SitemapsController@contentArticles')->name('sitemap.content-articles');
+
+});
+
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}', 'Frontend\ContentCategoriesController@index')->name('content-category');
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}/tag/{sTag?}', 'Frontend\ContentCategoriesController@index')->name('content-category-with-tag');
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}/{contentArticleSlug?}', 'Frontend\ContentCategoriesController@show')->name('content-article');
